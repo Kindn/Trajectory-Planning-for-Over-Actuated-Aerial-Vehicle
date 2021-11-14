@@ -6,6 +6,8 @@
 
 ### 1.1 基础知识学习
 
+#### 1.1.1 算法
+
 学习图论知识及各种图搜索算法；
 
 复习数学规划知识（凸优化、牛顿法 etc.）；
@@ -25,7 +27,13 @@ ESDF，基于梯度的轨迹规划
 
 读论文
 
+#### 1.1.2 验证（春季学期开学前完成）
+
+Gazebo创建环境，障碍物
+
+PX4实物实验
+
 ### 1.2 论文阅读
 
-#### 1.1.1 Whole-Body Real-Time Motion Planning for Multicopters
+#### 1.2.1 Whole-Body Real-Time Motion Planning for Multicopters
 

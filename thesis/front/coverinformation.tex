@@ -17,26 +17,26 @@
   %=========
   % 中文信息
   %=========
-  ctitleone={基于神经网络的机器人},%本科生封面使用
-  ctitletwo={智能抓取研究},%本科生封面使用
-  ctitlecover={基于神经网络的机器人智能抓取研究},%放在封面中使用，自由断行
-  ctitle={基于神经网络的机器人智能抓取研究},%放在原创性声明中使用
+  ctitleone={过驱动飞行器的轨迹},%本科生封面使用
+  ctitletwo={规划},%本科生封面使用
+  ctitlecover={过驱动飞行器的轨迹规划},%放在封面中使用，自由断行
+  ctitle={过驱动飞行器的轨迹规划},%放在原创性声明中使用
   csubtitle={一条副标题}, %一般情况没有，可以注释掉
   cxueke={工学},
   cpostgraduatetype={学术},
-  csubject={机械设计制造及其自动化},
+  csubject={自动化},
   % csubject={机械工程},
   caffil={机电工程与自动化学院},
   % caffil={哈尔滨工业大学（深圳）},
-  cauthor={杨敬轩},
-  csupervisor={某某某 教授},
+  cauthor={刘培焱},
+  csupervisor={陈浩耀 教授},
   cassosupervisor={某某某 教授}, % 副指导老师
   % ccosupervisor={某某某 教授}, % 联合指导老师
   % 日期自动使用当前时间，若需指定按如下方式修改：
-  cdate={2020年6月},
+  cdate={2022年6月},
   % 指定第二页封面的日期，即答辩日期
-  cdatesecond={2020年06月09日},
-  cstudentid={SZ160310217},
+  cdatesecond={2022年06月10日},
+  cstudentid={180310211},
   cstudenttype={同等学力人员}, %非全日制教育申请学位者
   %（同等学力人员）、（工程硕士）、（工商管理硕士）、
   %（高级管理人员工商管理硕士）、（公共管理硕士）、（中职教师）、（高校教师）等
@@ -58,24 +58,40 @@
   estudenttype={Master of Engineering},
   %
   % 关键词用“英文逗号”分割
-  ckeywords={\TeX, \LaTeX, CJK, 论文模板, 毕业论文},
-  ekeywords={\TeX, \LaTeX, CJK, hitszthesis, thesis},
+  ckeywords={过驱动飞行器, 轨迹规划, 避障},
+  ekeywords={over-actuated aircraft, trajectory planning, obstacle avoidance},
 }
 
 % 中文摘要
 \begin{cabstract}
 
-  摘要是论文内容的高度概括，应具有独立性和自含性，即不阅读论文的全文，就能获得必要的信息。摘要应包括本论文的目的、主要研究内容、研究方法、创造性成果及其理论与实际意义。摘要中不宜使用公式、化学结构式、图表和非公知公用的符号与术语，不标注引用文献编号，同时避免将摘要写成目录式的内容介绍。
-
-  关键词是为了文献标引工作、用以表示全文主要内容信息的单词或术语。关键词不超过5个，每个关键词中间用分号分隔。（模板作者注：关键词分隔符不用考虑，模板会自动处理。英文关键词同理。）
+  全向多旋翼无人飞行器是近年来正在发展的一个研究领域。作为一种全向系统，
+        全向多旋翼飞行器具有传统欠驱动多旋翼飞行器相比更加灵活的机动性，其在狭小
+        空间中的避障飞行也具有更大的优势。本文中我们为全向六旋翼飞行器设计了一个
+        基于优化的六自由度轨迹规划器，本规划器在欠驱动四旋翼飞行机的SE(3)运动规
+        划方案的基础上根据全向六旋翼飞行器的特点进行改进，用一系列凸多面体表示
+        环境中的安全区域，得到一条包含位置坐标和表示机体姿态的六自由度
+        无碰撞轨迹。并进行了仿真实验验证了可行性。
 
 \end{cabstract}
 
 % 英文摘要
 \begin{eabstract}
-
-  Externally pressurized gas bearing has been widely used in the field of aviation, semiconductor, weave, and measurement apparatus because of its advantage of high accuracy, little friction, low heat distortion, long life-span, and no pollution. In this thesis, based on the domestic and overseas researching\dots\dots
-
-  Key words are terms used in a dissertation for indexing, reflecting core information of the dissertation. An abstract may contain a maximum of 5 key words, with semi-colons used in between to separate one another.
+  Omnidirectional multirotor uav is a developing research 
+  field in recent years. As an omnidirectional system, 
+  omnidirectional multi-rotor aircraft has more flexible 
+  maneuverability than traditional underactuated multi-rotor 
+  aircraft, and it also has greater advantages in obstacle 
+  avoidance flight in narrow space. In this paper, 
+  we design a six-degree of freedom trajectory planner 
+  based on optimization for omnidirectional six-rotor aircraft.
+   Based on the SE(3) motion planning scheme of underactuated 
+   four-rotor aircraft, the planner is improved according to the
+    characteristics of omnidirectional six-rotor aircraft. 
+    A series of convex polyhedra are used to represent the
+     safety zone in the environment. A 6 dof collision-free 
+     trajectory containing position coordinates and body attitude 
+     is obtained. The feasibility is verified by simulation 
+     experiments.
 
 \end{eabstract}

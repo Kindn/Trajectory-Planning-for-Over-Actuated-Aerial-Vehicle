@@ -1,0 +1,84 @@
+\begin{thebibliography}{10}
+\providecommand{\bibauthor}[1]{#1}
+\providecommand{\bibeditor}[1]{#1}
+\providecommand{\bibtranslator}[1]{#1}
+\providecommand{\bibtitle}[1]{#1}
+\providecommand{\bibbooktitle}[1]{#1}
+\providecommand{\bibjournal}[1]{#1}
+\providecommand{\bibmark}[1]{\mbox{#1}}
+\providecommand{\bibcountry}[1]{#1}
+\providecommand{\bibpatentid}[1]{#1}
+\providecommand{\bibedition}[1]{#1}
+\providecommand{\biborganization}[1]{#1}
+\providecommand{\bibaddress}[1]{#1}
+\providecommand{\bibpublisher}[1]{#1}
+\providecommand{\bibinstitution}[1]{#1}
+\providecommand{\bibschool}[1]{#1}
+\providecommand{\bibvolume}[1]{#1}
+\providecommand{\bibnumber}[1]{#1}
+\providecommand{\bibversion}[1]{#1}
+\providecommand{\bibpages}[1]{#1}
+\providecommand{\bibmodifydate}[1]{#1}
+\providecommand{\bibcitedate}[1]{#1}
+\providecommand{\bibyear}[1]{#1}
+\providecommand{\bibdate}[1]{#1}
+\providecommand{\biburl}[1]{\newline\url{#1}}
+
+\bibitem{ren2010}
+\bibauthor{任春珍\@，杨再华\@，孙刚，等}\@.
+  \bibtitle{空环境飞行器交会对接设备精测工艺方法研究}\bibmark{\,［J］}\@.
+  \bibjournal{航天器环境工程}\@，\bibyear{2010}\@，\bibvolume{27}\bibnumber{（6）\!\!}\thinspace{}\textnormal{：}\bibpages{768\textnormal{-}771}\@.
+
+\bibitem{Gravagne2003}
+\bibauthor{GRAVAGNE I~A\@，RAHN C~D\@，WALKER I~D}\@. \bibtitle{Large
+  Deflection Dynamics and Control for Planar Continuum
+  Robots}\bibmark{\,［J］}\@. \bibjournal{IEEE/ASME Transactions on
+  Mechatronics}\@，\bibyear{2003}\@，\bibvolume{8}\bibnumber{（2）\!\!}\thinspace{}\textnormal{：}\bibpages{299\textnormal{-}307}\@.
+
+\bibitem{webster2010}
+\bibauthor{WEBSTER~III R~J\@，JONES B~A}\@. \bibtitle{Design and Kinematic
+  Modeling of Constant Curvature Continuum Robots: A
+  Review}\bibmark{\,［J］}\@. \bibjournal{The International Journal of
+  Robotics
+  Research}\@，\bibyear{2010}\@，\bibvolume{29}\bibnumber{（13）\!\!}\thinspace{}\textnormal{：}\bibpages{1661\textnormal{-}1683}\@.
+
+\bibitem{liu2016}
+\bibauthor{刘天亮}\@.
+  \bibtitle{面向狭小空间作业的绳索驱动超冗余机械臂的研究}\bibmark{\,［D］}\@.
+  \bibaddress{深圳}\thinspace{}\textnormal{：}\bibschool{哈尔滨工业大学}\@，\bibyear{2016}\thinspace{}\textnormal{：}\bibpages{61\textnormal{-}63}\@.
+
+\bibitem{fu2018}
+\bibauthor{付亚南}\@.
+  \bibtitle{狭小空间作业绳驱分段联动机器人设计及控制研究}\bibmark{\,［D］}\@.
+  \bibaddress{深圳}\thinspace{}\textnormal{：}\bibschool{哈尔滨工业大学}\@，\bibyear{2018}\thinspace{}\textnormal{：}\bibpages{12\textnormal{-}13}\@.
+
+\bibitem{zhai2015}
+\bibauthor{翟士民\@，刘荣\@，薛彤}\@.
+  \bibtitle{绳驱动连续型机械臂设计}\bibmark{\,［J］}\@.
+  \bibjournal{机械工程与自动化}\@，\bibyear{2015}\@，\bibvolume{2}\thinspace{}\textnormal{：}\bibpages{119\textnormal{-}121}\@.
+
+\bibitem{yao2015}
+\bibauthor{姚艳彬\@，杜兆才\@，魏志强}\@.
+  \bibtitle{蛇形臂机器人装配系统研究}\bibmark{\,［J］}\@.
+  \bibjournal{航空制造技术}\@，\bibyear{2015}\@，\bibvolume{491}\bibnumber{（21）\!\!}\thinspace{}\textnormal{：}\bibpages{26\textnormal{-}30}\@.
+
+\bibitem{jones2006}
+\bibauthor{JONES B~A\@，WALKER I~D}\@. \bibtitle{Kinematics for Multisection
+  Continuum Robots}\bibmark{\,［J］}\@. \bibjournal{IEEE Transactions on
+  Robotics}\@，\bibyear{2006}\@，\bibvolume{22}\bibnumber{（1）\!\!}\thinspace{}\textnormal{：}\bibpages{43\textnormal{-}55}\@.
+
+\bibitem{mcmahan2005}
+\bibauthor{MCMAHAN W\@，JONES B~A\@，WALKER I~D}\@. \bibtitle{Design and
+  Implementation of a Multi-section Continuum Robot:
+  Air-Octor}\bibmark{\,［C］} //\thinspace{}\bibbooktitle{IEEE/RSJ
+  International Conference on Intelligent Robots and
+  Systems}\@，\bibaddress{Shanghai,
+  China}\@，\bibyear{2005}\thinspace{}\textnormal{：}\bibpages{2578\textnormal{-}2585}\@.
+
+\bibitem{jones2004}
+\bibauthor{JONES B~A\@，MCMAHAN W\@，WALKER I}\@. \bibtitle{Design and
+  Analysis of a Novel Pneumatic Manipulator}\bibmark{\,［C］}
+  //\thinspace{}\bibbooktitle{IFAC Symposium on Mechatronic
+  Systems}\@，\bibaddress{Hanburg，German}\@，\bibyear{2004}\thinspace{}\textnormal{：}\bibpages{745\textnormal{-}750}\@.
+
+\end{thebibliography}

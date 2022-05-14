@@ -6,44 +6,57 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: reference.bib
-You've used 10 entries,
+Warning--Require journal: 2012Underactuated
+Warning--Require address: 2011minimumsnap
+Warning--Require citedate: 2011minimumsnap
+Warning--Require citedate: gao2020teach
+Warning--Require journal: 2021Fast
+Warning--Require address: yang2021whole
+Warning--Require address: brescianini2016design
+Warning--Require journal: 2021Geometrically
+Warning--Require address: morbidi2018energy
+Warning--Require address: quigley2009ros
+Warning--Require address: gazebo
+Warning--Require address: meier2015px4
+You've used 31 entries,
             3189 wiz_defined-function locations,
-            783 strings with 7471 characters,
-and the built_in function-call counts, 19840 in all, are:
-= -- 2203
-> -- 34
-< -- 78
-+ -- 1721
-- -- 126
-* -- 494
-:= -- 2151
+            902 strings with 12076 characters,
+and the built_in function-call counts, 61448 in all, are:
+= -- 6840
+> -- 112
+< -- 255
++ -- 5417
+- -- 402
+* -- 1579
+:= -- 6784
 add.period$ -- 0
-call.type$ -- 10
-change.case$ -- 48
+call.type$ -- 31
+change.case$ -- 162
 chr.to.int$ -- 0
-cite$ -- 10
-duplicate$ -- 2885
-empty$ -- 769
-format.name$ -- 96
-if$ -- 5256
+cite$ -- 43
+duplicate$ -- 8827
+empty$ -- 2359
+format.name$ -- 324
+if$ -- 16416
 int.to.chr$ -- 0
-int.to.str$ -- 10
+int.to.str$ -- 31
 missing$ -- 0
-newline$ -- 57
-num.names$ -- 10
-pop$ -- 306
+newline$ -- 120
+num.names$ -- 31
+pop$ -- 872
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 164
+skip$ -- 498
 stack$ -- 0
-substring$ -- 2416
-swap$ -- 547
+substring$ -- 7460
+swap$ -- 1583
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 264
-width$ -- 12
-write$ -- 172
+warning$ -- 12
+while$ -- 798
+width$ -- 33
+write$ -- 458
+(There were 12 warnings)

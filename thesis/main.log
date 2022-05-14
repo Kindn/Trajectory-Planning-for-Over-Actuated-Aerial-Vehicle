@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.4.18)  3 MAY 2022 20:04
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.4.18)  14 MAY 2022 20:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -7,7 +7,7 @@ entering extended mode
 (./main.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (./hitszthesis.cls
-Document Class: hitszthesis 2021/11/16 3.2.2 Dissertation Template for Harbin Institute of Technology, ShenZhen (HITSZ)
+Document Class: hitszthesis 2022/05/05 3.2.3 Dissertation Template for Harbin Institute of Technology, ShenZhen (HITSZ)
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
@@ -945,7 +945,7 @@ LaTeX Info: Redefining \LaTeXe on input line 219.
 \enitdp@translationbib=\count368
 \enitdp@idxwordlist=\count369
 ) (./hitszthesis.cfg
-File: hitszthesis.cfg 2021/11/16 3.2.2 Dissertation Template for Harbin Institute of Technology, ShenZhen (HITSZ)
+File: hitszthesis.cfg 2022/05/05 3.2.3 Dissertation Template for Harbin Institute of Technology, ShenZhen (HITSZ)
 \c@currproofctr=\count370
 \c@endproofctr=\count371
 \c@proof=\count372
@@ -1656,10 +1656,8 @@ LaTeX Font Info:    Font shape `TU/texgyretermes(0)/b/n' will be
 
 
 ]
-File: figures/hitlogo.eps Graphic file (type eps)
-<figures/hitlogo.eps>
-File: figures/bthesistitle.eps Graphic file (type eps)
-<figures/bthesistitle.eps>
+File: figures/bthesistitle.pdf Graphic file (type pdf)
+<use figures/bthesistitle.pdf>
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
 (Font)              scaled to size 15.05624pt on input line 75.
 LaTeX Font Info:    Font shape `TU/texgyreheros(0)/m/n' will be
@@ -1671,6 +1669,8 @@ LaTeX Font Info:    Font shape `TU/texgyreheros(0)/m/n' will be
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <15.05624> not available
 (Font)              size <14.4> substituted on input line 75.
 
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/b/n' will be
+(Font)              scaled to size 15.05624pt on input line 75.
 [2
 
 
@@ -1688,41 +1688,78 @@ LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
 ] (./main.toc [3
 
 
-])
+] [4])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [4] (./body/chapter01.tex
+ [5] (./body/chapter01.tex
 第1章
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 14.05249pt on input line 20.
-) (./body/chapter02.tex [1
+(Font)              scaled to size 14.05249pt on input line 11.
+File: figures/aerial_photo.jpeg Graphic file (type bmp)
+<figures/aerial_photo.jpeg>
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 10.53937pt on input line 22.
+File: figures/farming.jpeg Graphic file (type bmp)
+<figures/farming.jpeg>
+File: figures/inspection.jpeg Graphic file (type bmp)
+<figures/inspection.jpeg>
+File: figures/logistics.jpeg Graphic file (type bmp)
+<figures/logistics.jpeg>
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 39.
+[1
 
 
 
-]
+] [2]
+File: figures/gao2020teach_a.png Graphic file (type bmp)
+<figures/gao2020teach_a.png>
+File: figures/gao2020teach_b.png Graphic file (type bmp)
+<figures/gao2020teach_b.png>
+LaTeX Font Info:    Font shape `TU/texgyreheros(0)/m/n' will be
+(Font)              scaled to size 9.48535pt on input line 90.
+LaTeX Font Info:    Font shape `TU/texgyreheros(0)/m/n' will be
+(Font)              scaled to size 6.29996pt on input line 90.
+LaTeX Font Info:    Font shape `TU/texgyreheros(0)/m/n' will be
+(Font)              scaled to size 4.49997pt on input line 90.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 90.
+
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 90.
+File: figures/se3_traj.png Graphic file (type bmp)
+<figures/se3_traj.png>
+[3]
+LaTeX Font Info:    Trying to load font information for OMS+texgyretermes(0) on input line 111.
+LaTeX Font Info:    No file OMStexgyretermes(0).fd. on input line 111.
+
+
+LaTeX Font Warning: Font shape `OMS/texgyretermes(0)/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead on input line 111.
+
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 6.52437pt on input line 111.
+[4]
+File: figures/octo_omav.png Graphic file (type bmp)
+<figures/octo_omav.png>
+File: figures/voliro_2.png Graphic file (type bmp)
+<figures/voliro_2.png>
+File: figures/omni_quadrotor.png Graphic file (type bmp)
+<figures/omni_quadrotor.png>
+ [5] [6]) (./body/chapter02.tex [7]
 第2章
 File: figures/golfer.eps Graphic file (type eps)
 <figures/golfer.eps>
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 10.53937pt on input line 24.
-LaTeX Font Info:    Font shape `TU/texgyreheros(0)/m/n' will be
-(Font)              scaled to size 9.48535pt on input line 24.
-LaTeX Font Info:    Font shape `TU/texgyreheros(0)/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 24.
-LaTeX Font Info:    Font shape `TU/texgyreheros(0)/m/n' will be
-(Font)              scaled to size 4.49997pt on input line 24.
-
-LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 24.
-
-[2
+[8
 
 
 ]
 File: figures/golfer.eps Graphic file (type eps)
 <figures/golfer.eps>
- [3]
+ [9]
 File: figures/golfer.eps Graphic file (type eps)
 <figures/golfer.eps>
 File: figures/golfer.eps Graphic file (type eps)
@@ -1774,7 +1811,7 @@ Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
 (fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;embolden=2;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
-[4] [5]
+[10] [11]
 File: figures/golfer.eps Graphic file (type eps)
 <figures/golfer.eps>
 File: figures/golfer.eps Graphic file (type eps)
@@ -1805,11 +1842,11 @@ File: figures/golfer.eps Graphic file (type eps)
 <figures/golfer.eps>
 File: figures/golfer.eps Graphic file (type eps)
 <figures/golfer.eps>
- [6]
+ [12]
 
-LaTeX Warning: Text page 7 contains only floats.
+LaTeX Warning: Text page 13 contains only floats.
 
-[7] [8] [9]
+[13] [14] [15]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1842,43 +1879,32 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/sc' will be
 (Font)              scaled to size 12.045pt on input line 267.
- [10
+ [16
 
-] [11]) (./body/chapter03.tex [12]
+] [17]) (./body/chapter03.tex [18]
 第3章
 Package hyperref Info: bookmark level for unknown equation defaults to 0 on input line 19.
-[13
+[19
 
 
-]) (./body/chapter04.tex [14]
+]) (./body/chapter04.tex [20]
 第4章
-[15
+[21
 
 
-] [16]
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 99.
-
+] [22]
 Underfull \hbox (badness 3179) in paragraph at lines 118--118
 []|\TU/texgyretermes(0)/m/n/10.53937 deuce-ace, leash, set, tercet, ternary, ternion,
  []
 
-[17]) (./body/chapter05.tex [18] [19]
+[23]) (./body/chapter05.tex [24] [25]
 第5章
-) [20
+) [26
 
 
-] (./body/chapter06.tex [21]
+] (./body/chapter06.tex [27]
 第6章
-LaTeX Font Info:    Trying to load font information for OMS+texgyretermes(0) on input line 9.
-LaTeX Font Info:    No file OMStexgyretermes(0).fd. on input line 9.
-
-LaTeX Font Warning: Font shape `OMS/texgyretermes(0)/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead on input line 9.
-
-LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 6.52437pt on input line 9.
-[22
+[28
 
 
 ]
@@ -1892,23 +1918,26 @@ Package hyperref Info: bookmark level for unknown problem defaults to 0 on input
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 61.
 Package hyperref Info: bookmark level for unknown axiom defaults to 0 on input line 63.
 Package hyperref Info: bookmark level for unknown conjecture defaults to 0 on input line 67.
- [23] [24]) [25] (./back/conclusion.tex) (./main.bbl [26
+ [29] [30]) [31] (./back/conclusion.tex) (./main.bbl [32
 
 
 
-]
-Underfull \hbox (badness 6461) in paragraph at lines 66--69
+] [33
+
+
+] [34]
+Underfull \hbox (badness 5652) in paragraph at lines 200--203
 []\TU/texgyretermes(0)/m/n/12.045 JONES B A\TU/FandolSong-Regular(0)/m/n/12.045 ，| \TU/texgyretermes(0)/m/n/12.045 WALKER I D. Kinematics for Multisection Continuum
  []
 
-) [27
+) [35]
+LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
+(Font)              scaled to size 15.95961pt on input line 121.
+ (./back/acknowledgements.tex [36
 
 
-] (./back/acknowledgements.tex [28
 
-
-
-]) (./back/appendix01.tex [29
+]) (./back/appendix01.tex [37
 
 
 ]
@@ -1918,13 +1947,13 @@ Missing character: There is no 郤 in font [FandolSong-Regular.otf]/OT:language=
 Missing character: There is no 窾 in font [FandolSong-Regular.otf]/OT:language=dflt;!
 Missing character: There is no 坬 in font [FandolSong-Regular.otf]/OT:language=dflt;!
 Missing character: There is no 謋 in font [FandolSong-Regular.otf]/OT:language=dflt;!
-[30
+[38
 
 
 ]
 Missing character: There is no 餔 in font [FandolSong-Regular.otf]/OT:language=dflt;!
 Missing character: There is no 餔 in font [FandolSong-Regular.otf]/OT:language=dflt;!
-) (./back/appendix02.tex [31]
+) (./back/appendix02.tex [39]
 附录 B
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/it' will be
 (Font)              scaled to size 12.045pt on input line 10.
@@ -1935,7 +1964,7 @@ Package hyperref Info: bookmark level for unknown mpdef defaults to 0 on input l
 \c@currmpdefopctr=\count492
 \c@endmpdefopctr=\count493
 Package hyperref Info: bookmark level for unknown mpdefop defaults to 0 on input line 51.
-[32
+[40
 
 
 ]
@@ -1943,18 +1972,18 @@ Missing character: There is no ’ in font cmr10!
 Missing character: There is no ’ in font cmr10!
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/sc' will be
 (Font)              scaled to size 10.53937pt on input line 128.
- [33] [34]
+ [41] [42]
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/sl' in size <12.045> not available
 (Font)              Font shape `TU/texgyretermes(0)/m/it' tried instead on input line 173.
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/it' will be
 (Font)              scaled to size 12.045pt on input line 173.
-) (./back/appendix03.tex [35]
+) (./back/appendix03.tex [43]
 附录 C
 )
 \tf@thm=\write7
 \openout7 = `main.thm'.
 
- [36
+ [44
 
 
 ]
@@ -1964,7 +1993,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 178.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A902C2C09792D6FAB13E2751438BBD67;8237.
+(rerunfilecheck)             Checksum: 55457BB42D8E51F738145BD204C3277E;8853.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1975,12 +2004,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 45571 strings out of 479819
- 944495 string characters out of 5895846
- 1562569 words of memory out of 5000000
- 61733 multiletter control sequences out of 15000+600000
- 583151 words of font info for 220 fonts, out of 8000000 for 9000
+ 45731 strings out of 479819
+ 950553 string characters out of 5895846
+ 1569001 words of memory out of 5000000
+ 61877 multiletter control sequences out of 15000+600000
+ 583175 words of font info for 223 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  68i,13n,126p,2527b,2267s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (42 pages).
+Output written on main.pdf (51 pages).

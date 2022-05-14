@@ -24,6 +24,140 @@
 \providecommand{\bibdate}[1]{#1}
 \providecommand{\biburl}[1]{\newline\url{#1}}
 
+\bibitem{2012Underactuated}
+\bibauthor{TEDRAKE R}\@. \bibtitle{Underactuated Robotics: Learning, Planning,
+  and Control for Efficient and Agile Machines: Course Notes for MIT 6.832.
+  Working draft edition}\bibmark{\,［J］}\@，\bibyear{2012}\@.
+
+\bibitem{2003Flatness}
+\bibauthor{FLIESS M\@，LéVINE J\@，MARTIN P，et~al}\@. \bibtitle{Flatness
+  and defect of non-linear systems: introductory theory and
+  examples}\bibmark{\,［J］}\@. \bibjournal{International Journal of
+  Control}\@，\bibyear{2003}\@，\bibvolume{61}\bibnumber{（6）\!\!}\thinspace{}\textnormal{：}\bibpages{1327\textnormal{-}1361}\@.
+
+\bibitem{2011minimumsnap}
+\bibauthor{MELLINGER D\@，KUMAR V}\@. \bibtitle{Minimum snap trajectory
+  generation and control for quadrotors}\bibmark{\,［C/OL］}
+  //\thinspace{}\bibbooktitle{2011 IEEE International Conference on Robotics
+  and
+  Automation}\@，\bibaddress{［S.l.］}\@，\bibyear{2011}\thinspace{}\textnormal{：}\bibpages{2520\textnormal{-}2525}\@.
+  \url{http://dx.doi.org/10.1109/ICRA.2011.5980409}\@.
+
+\bibitem{bry2015aggressive}
+\bibauthor{BRY A\@，RICHTER C\@，BACHRACH A，et~al}\@. \bibtitle{Aggressive
+  flight of fixed-wing and quadrotor aircraft in dense indoor
+  environments}\bibmark{\,［J］}\@. \bibjournal{The International Journal of
+  Robotics
+  Research}\@，\bibyear{2015}\@，\bibvolume{34}\bibnumber{（7）\!\!}\thinspace{}\textnormal{：}\bibpages{969\textnormal{-}1002}\@.
+
+\bibitem{gao2020teach}
+\bibauthor{GAO F\@，WANG L\@，ZHOU B，et~al}\@.
+  \bibtitle{Teach-Repeat-Replan: A Complete and Robust System for Aggressive
+  Flight in Complex Environments}\bibmark{\,［J/OL］}\@. \bibjournal{IEEE
+  Transactions on
+  Robotics}\@，\bibyear{2020}\@，\bibvolume{36}\bibnumber{（5）\!\!}\thinspace{}\textnormal{：}\bibpages{1526\textnormal{-}1545}\@.
+  \url{http://dx.doi.org/10.1109/TRO.2020.2993215}\@.
+
+\bibitem{2021Fast}
+\bibauthor{HAN Z\@，WANG Z\@，XU C，et~al}\@. \bibtitle{Fast-Racing: An
+  Open-source Strong Baseline for SE(3) Planning in Autonomous Drone
+  Racing}\bibmark{\,［J］}\@，\bibyear{2021}\@.
+
+\bibitem{liu2018search}
+\bibauthor{LIU S\@，MOHTA K\@，ATANASOV N，et~al}\@. \bibtitle{Search-based
+  motion planning for aggressive flight in se (3)}\bibmark{\,［J］}\@.
+  \bibjournal{IEEE Robotics and Automation
+  Letters}\@，\bibyear{2018}\@，\bibvolume{3}\bibnumber{（3）\!\!}\thinspace{}\textnormal{：}\bibpages{2439\textnormal{-}2446}\@.
+
+\bibitem{wang2022geometrically}
+\bibauthor{WANG Z\@，ZHOU X\@，XU C，et~al}\@. \bibtitle{Geometrically
+  constrained trajectory optimization for multicopters}\bibmark{\,［J］}\@.
+  \bibjournal{IEEE Transactions on Robotics}\@，\bibyear{2022}\@.
+
+\bibitem{yang2021whole}
+\bibauthor{YANG S\@，HE B\@，WANG Z，et~al}\@. \bibtitle{{Whole-Body
+  Real-Time Motion Planning for Multicopters}}\bibmark{\,［C］}
+  //\thinspace{}\bibbooktitle{2021 IEEE International Conference on Robotics
+  and Automation
+  (ICRA)}\@，\bibaddress{［S.l.］}\@，\bibyear{2021}\thinspace{}\textnormal{：}\bibpages{9197\textnormal{-}9203}\@.
+
+\bibitem{brescianini2016design}
+\bibauthor{BRESCIANINI D\@，D'ANDREA R}\@. \bibtitle{Design, modeling and
+  control of an omni-directional aerial vehicle}\bibmark{\,［C］}
+  //\thinspace{}\bibbooktitle{2016 IEEE international conference on robotics
+  and automation
+  (ICRA)}\@，\bibaddress{［S.l.］}\@，\bibyear{2016}\thinspace{}\textnormal{：}\bibpages{3261\textnormal{-}3266}\@.
+
+\bibitem{park2018odar}
+\bibauthor{PARK S\@，LEE J\@，AHN J，et~al}\@. \bibtitle{Odar: Aerial
+  manipulation platform enabling omnidirectional wrench
+  generation}\bibmark{\,［J］}\@. \bibjournal{IEEE/ASME Transactions on
+  mechatronics}\@，\bibyear{2018}\@，\bibvolume{23}\bibnumber{（4）\!\!}\thinspace{}\textnormal{：}\bibpages{1907\textnormal{-}1918}\@.
+
+\bibitem{allenspach2020design}
+\bibauthor{ALLENSPACH M\@，BODIE K\@，BRUNNER M，et~al}\@. \bibtitle{Design
+  and optimal control of a tiltrotor micro-aerial vehicle for efficient
+  omnidirectional flight}\bibmark{\,［J］}\@. \bibjournal{The International
+  Journal of Robotics
+  Research}\@，\bibyear{2020}\@，\bibvolume{39}\bibnumber{（10-11）\!\!}\thinspace{}\textnormal{：}\bibpages{1305\textnormal{-}1325}\@.
+
+\bibitem{ryll2014novel}
+\bibauthor{RYLL M\@，B{\"U}LTHOFF H~H\@，GIORDANO P~R}\@. \bibtitle{A novel
+  overactuated quadrotor unmanned aerial vehicle: Modeling, control, and
+  experimental validation}\bibmark{\,［J］}\@. \bibjournal{IEEE Transactions
+  on Control Systems
+  Technology}\@，\bibyear{2014}\@，\bibvolume{23}\bibnumber{（2）\!\!}\thinspace{}\textnormal{：}\bibpages{540\textnormal{-}556}\@.
+
+\bibitem{kamel2018voliro}
+\bibauthor{KAMEL M\@，VERLING S\@，ELKHATIB O，et~al}\@. \bibtitle{The
+  voliro omniorientational hexacopter: An agile and maneuverable tiltable-rotor
+  aerial vehicle}\bibmark{\,［J］}\@. \bibjournal{IEEE Robotics \& Automation
+  Magazine}\@，\bibyear{2018}\@，\bibvolume{25}\bibnumber{（4）\!\!}\thinspace{}\textnormal{：}\bibpages{34\textnormal{-}44}\@.
+
+\bibitem{2021Geometrically}
+\bibauthor{WANG Z\@，ZHOU X\@，XU C，et~al}\@. \bibtitle{Geometrically
+  Constrained Trajectory Optimization for
+  Multicopters}\bibmark{\,［J］}\@，\bibyear{2021}\@.
+
+\bibitem{brescianini2018computationally}
+\bibauthor{BRESCIANINI D\@，D’ANDREA R}\@. \bibtitle{Computationally
+  efficient trajectory generation for fully actuated multirotor
+  vehicles}\bibmark{\,［J］}\@. \bibjournal{IEEE Transactions on
+  Robotics}\@，\bibyear{2018}\@，\bibvolume{34}\bibnumber{（3）\!\!}\thinspace{}\textnormal{：}\bibpages{555\textnormal{-}571}\@.
+
+\bibitem{morbidi2018energy}
+\bibauthor{MORBIDI F\@，BICEGO D\@，RYLL M，et~al}\@.
+  \bibtitle{Energy-efficient trajectory generation for a hexarotor with
+  dual-tilting propellers}\bibmark{\,［C］} //\thinspace{}\bibbooktitle{2018
+  IEEE/RSJ International Conference on Intelligent Robots and Systems
+  (IROS)}\@，\bibaddress{［S.l.］}\@，\bibyear{2018}\thinspace{}\textnormal{：}\bibpages{6226\textnormal{-}6232}\@.
+
+\bibitem{pantic2021mesh}
+\bibauthor{PANTIC M\@，OTT L\@，CADENA C，et~al}\@. \bibtitle{Mesh manifold
+  based riemannian motion planning for omnidirectional micro aerial
+  vehicles}\bibmark{\,［J］}\@. \bibjournal{IEEE Robotics and Automation
+  Letters}\@，\bibyear{2021}\@，\bibvolume{6}\bibnumber{（3）\!\!}\thinspace{}\textnormal{：}\bibpages{4790\textnormal{-}4797}\@.
+
+\bibitem{quigley2009ros}
+\bibauthor{QUIGLEY M\@，CONLEY K\@，GERKEY B，et~al}\@. \bibtitle{ROS: an
+  open-source Robot Operating System}\bibmark{\,［C］}
+  //\thinspace{}\bibbooktitle{ICRA Workshop on Open Source
+  Software\thinspace{}\textnormal{：}Vol~3}\@，\bibaddress{［S.l.］}\@，\bibyear{2009}\thinspace{}\textnormal{：}\bibpages{5}\@.
+
+\bibitem{gazebo}
+\bibauthor{KOENIG N\@，HOWARD A}\@. \bibtitle{Design and use paradigms for
+  gazebo, an open-source multi-robot simulator}\bibmark{\,［C］}
+  //\thinspace{}\bibbooktitle{2004 IEEE/RSJ International Conference on
+  Intelligent Robots and Systems (IROS)(IEEE Cat. No.
+  04CH37566)\thinspace{}\textnormal{：}Vol~3}\@，\bibaddress{［S.l.］}\@，\bibyear{2004}\thinspace{}\textnormal{：}\bibpages{2149\textnormal{-}2154}\@.
+
+\bibitem{meier2015px4}
+\bibauthor{MEIER L\@，HONEGGER D\@，POLLEFEYS M}\@. \bibtitle{PX4: A
+  node-based multithreaded open source robotics framework for deeply embedded
+  platforms}\bibmark{\,［C］} //\thinspace{}\bibbooktitle{2015 IEEE
+  international conference on robotics and automation
+  (ICRA)}\@，\bibaddress{［S.l.］}\@，\bibyear{2015}\thinspace{}\textnormal{：}\bibpages{6235\textnormal{-}6240}\@.
+
 \bibitem{ren2010}
 \bibauthor{任春珍\@，杨再华\@，孙刚，等}\@.
   \bibtitle{空环境飞行器交会对接设备精测工艺方法研究}\bibmark{\,［J］}\@.

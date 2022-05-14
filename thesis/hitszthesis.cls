@@ -25,7 +25,7 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{hitszthesis}
-[2021/11/16 3.2.2 Dissertation Template for Harbin Institute of Technology, ShenZhen (HITSZ)]
+[2022/05/05 3.2.3 Dissertation Template for Harbin Institute of Technology, ShenZhen (HITSZ)]
 \RequirePackage{ifthen}
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{
@@ -302,6 +302,7 @@
 \hitsz@def@fontsize{erhao}{22bp}
 \hitsz@def@fontsize{xiaoer}{18bp}
 \hitsz@def@fontsize{sanhao}{16bp}
+\hitsz@def@fontsize{xsanhao}{15.9bp}
 \hitsz@def@fontsize{xiaosan}{15bp}
 \hitsz@def@fontsize{sihao}{14bp}
 \hitsz@def@fontsize{banxiaosi}{13bp}
@@ -363,7 +364,7 @@
     \fi
     \ifhitsz@shenzhen
       \fancyhead[C]{\songti\xiaowu[0]%
-        \hitsz@cschoolname\hitsz@bachelor@cxuewei\hitsz@bachelor@cthesisname}%
+        \hitsz@cschoolname\hitsz@shenzhencampus\hitsz@bachelor@cxuewei\hitsz@bachelor@cthesisname}%
     \fi
     \ifhitsz@weihai
       \fancyhead[C]{\songti\xiaowu[0]%
@@ -897,7 +898,8 @@
     \centering{\includegraphics[width=6.2cm]{hitlogo}}
   \else%
     \ifhitsz@shenzhen%
-      \centering{\includegraphics[width=6.2cm]{hitlogo}}
+    \vspace*{1cm}
+      \centering{\includegraphics[scale=1]{bthesistitle}}
     \else%
       \ifhitsz@weihai%
         \centering{\includegraphics[width=6.2cm]{hitlogo}~~\raisebox{0.2em}{%
@@ -905,33 +907,30 @@
       \fi%
     \fi%
   \fi%
-  \vspace{1.3cm}
+  \vspace*{0cm}
   \begin{center}
-    \centering\includegraphics[width=10.5cm]{bthesistitle}
-    \vfill
-    \parbox[t][14.2cm][b]{\textwidth}
+    \parbox[t][14.7cm][b]{\textwidth}
     {\heiti\xiaosan
-      \begin{center} \renewcommand{\arraystretch}{2.5} \heiti
+      \begin{center} \renewcommand{\arraystretch}{2} \heiti
         \setlength{\hitsz@title@width}{5.5em}
         \ifhitsz@infoleft
           \begin{tabular}{l@{\ \  }l}
             {\xiaoer  \hitsz@put@title{\hitsz@bachelor@cthesistitle}} &
-             \underline{\makebox[\infowidth][l]{\hspace*{1em}\xiaoer\songti\hitsz@ctitleone}}\\
-              &  \underline{\makebox[\infowidth][l]{\hspace*{1em}\xiaoer\songti\hitsz@ctitletwo}}\\
+             \underline{\makebox[\infowidth][l]{\hspace*{1em}\xiaoer\songti\textbf{\hitsz@ctitleone}}}\\
+              &  \underline{\makebox[\infowidth][l]{\hspace*{1em}\xiaoer\songti\textbf{\hitsz@ctitletwo}}}\\
               & \\
             {\hitsz@put@title{\hitsz@bachelor@cstudenttitle}}  &
-              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\hitsz@cauthor}}\\
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@cauthor}}}\\
             {\hitsz@put@title{\hitsz@bachelor@cstudentidtitle}} &
-              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\hitsz@cstudentid}}\\
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@cstudentid}}}\\
             {\hitsz@put@title{\hitsz@bachelor@caffiltitlesz}} &
-              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\hitsz@caffil}}\\
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@caffil}}}\\
             {\hitsz@put@title{\hitsz@bachelor@cmajortitle}} &
-              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\hitsz@csubject}}\\
-
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@csubject}}}\\
             {\hitsz@put@title{\hitsz@bachelor@csupervisortitle}} &
-              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\hitsz@csupervisor}}\\
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@csupervisor}}}\\
             {\hitsz@put@title{\hitsz@cdatetitle}} &
-              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\hitsz@cdatesecond}}
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@cdatesecond}}}
           \end{tabular}
         \else
           \begin{tabular}{l@{\ \  }c}
@@ -939,12 +938,14 @@
               \underline{\makebox[\infowidth]{\xiaoer\songti\textbf{\hitsz@ctitleone}}}\\
                 &  \underline{\makebox[\infowidth]{\xiaoer\songti\textbf{\hitsz@ctitletwo}}}\\
                 & \\
-            {\hitsz@put@title{\hitsz@bachelor@cmajortitle}} &
-              \underline{\makebox[\infowidth]{\songti\textbf{\hitsz@csubject}}}\\
+            {\hitsz@put@title{\hitsz@bachelor@cstudenttitle}}  &
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@cauthor}}}\\
             {\hitsz@put@title{\hitsz@bachelor@cstudentidtitle}} &
-              \underline{\makebox[\infowidth]{\songti\textbf{\hitsz@cstudentid}}}\\
-            {\hitsz@put@title{\hitsz@bachelor@cstudenttitle}} &
-              \underline{\makebox[\infowidth]{\songti\textbf{\hitsz@cauthor}}}\\
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@cstudentid}}}\\
+            {\hitsz@put@title{\hitsz@bachelor@caffiltitlesz}} &
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@caffil}}}\\
+            {\hitsz@put@title{\hitsz@bachelor@cmajortitle}} &
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@csubject}}}\\
             {\hitsz@put@title{\hitsz@bachelor@csupervisortitle}} &
               \underline{\makebox[\infowidth]{\songti\textbf{\hitsz@csupervisor}}}\\
             {\hitsz@put@title{\hitsz@cdatetitle}} &
@@ -954,6 +955,7 @@
       \renewcommand{\arraystretch}{1}
       \end{center}
     }
+    \vfill
   \end{center}
 }
 
@@ -1370,7 +1372,7 @@
 }
 \def\hitsz@authorization@bachelor{%
   \ifhitsz@openright\cleardoublepage\else\clearpage\fi
-  \chapter*{\ifhitsz@weihai\sanhao\fi\hitsz@declarename@bachelor}
+  \chapter*{\ifhitsz@shenzhen\xsanhao\fi\hitsz@declarename@bachelor}
   \addcontentsline{toc}{chapter}{\hitsz@authorization@bachelor@toc}
   \ifhitsz@shenzhen%
     \hitsz@authorizationtext@bachelor@shenzhen

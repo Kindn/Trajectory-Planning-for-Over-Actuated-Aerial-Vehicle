@@ -58,40 +58,47 @@
   estudenttype={Master of Engineering},
   %
   % 关键词用“英文逗号”分割
-  ckeywords={过驱动飞行器, 轨迹规划, 避障},
-  ekeywords={over-actuated aircraft, trajectory planning, obstacle avoidance},
+  ckeywords={过驱动飞行器, 轨迹规划, 避障，SE(3)规划},
+  ekeywords={over-actuated aircraft, trajectory planning, obstacle avoidance, SE(3) planning},
 }
 
 % 中文摘要
 \begin{cabstract}
+  进入21世纪以来，多旋翼无人机领域取得了很大的发展，成为一类成功从实验室走进人们生活的机器人系统。
+  为突破现在市场上主流的欠驱动无人机所存在的瓶颈，近年来人们又研制出了不少种类过驱动多旋翼无人机系统。
+  作为一种全驱动系统，这种无人机可以跟踪6自由度轨迹，有效增强了多旋翼无人机的机动性能，拓宽了其应用场景。
+  可以想到，这会让多旋翼飞行器在复杂、拥挤的环境中的自主飞行能力大幅提升，而有效的规划算法是实现这种提升的关键。
+  现有的规划方案主要是基于传统欠驱动飞行器开发的，在过驱动飞行器上鲜有先例。
 
-  全向多旋翼无人飞行器是近年来正在发展的一个研究领域。作为一种全向系统，
-        全向多旋翼飞行器具有传统欠驱动多旋翼飞行器相比更加灵活的机动性，其在狭小
-        空间中的避障飞行也具有更大的优势。本文中我们为全向六旋翼飞行器设计了一个
-        基于优化的六自由度轨迹规划器，本规划器在欠驱动四旋翼飞行机的SE(3)运动规
-        划方案的基础上根据全向六旋翼飞行器的特点进行改进，用一系列凸多面体表示
-        环境中的安全区域，得到一条包含位置坐标和表示机体姿态的六自由度
-        无碰撞轨迹。并进行了仿真实验验证了可行性。
+  本文以实现过驱动多旋翼飞行器在复杂环境中的避障规划为目标，为过驱动多旋翼飞行器设计了一个基于优化的全自由度全局轨迹规划器。
+  该规划器根据由一系列凸多面体表示的安全约束，结合飞行器的整体形态以及动力学约束，最终规划出一条由起点到终点的无碰撞最优轨迹。
+
+  本文理论部分介绍了规划器前端路径搜索算法以及安全约束生成算法的设计和实现，并且详细讲述了后端轨迹优化算法的原理和设计。
+  其中在后端优化算法部分分别介绍了基于欧拉角和基于四元数的两种姿态规划方案，并在附录中给出了相应公式的推导。
+
+  在实验部分中，本文以一种全向六旋翼飞行器机构为平台，针对不同的仿真场景进行了规划实验，以验证和对比基于上述两种姿态规划方案所设计规划器的可行性、有效性和计算效率。
+  随后基于Gazebo和PX4进行了仿真实验，利用本文设计的规划器成功实现了全向六旋翼飞行器在狭长通道等极端环境中的避障飞行。
+  最后在实物平台上进行实验，验证了规划器的实用性。
+
+
 
 \end{cabstract}
 
 % 英文摘要
 \begin{eabstract}
-  Omnidirectional multirotor uav is a developing research 
-  field in recent years. As an omnidirectional system, 
-  omnidirectional multi-rotor aircraft has more flexible 
-  maneuverability than traditional underactuated multi-rotor 
-  aircraft, and it also has greater advantages in obstacle 
-  avoidance flight in narrow space. In this paper, 
-  we design a six-degree of freedom trajectory planner 
-  based on optimization for omnidirectional six-rotor aircraft.
-   Based on the SE(3) motion planning scheme of underactuated 
-   four-rotor aircraft, the planner is improved according to the
-    characteristics of omnidirectional six-rotor aircraft. 
-    A series of convex polyhedra are used to represent the
-     safety zone in the environment. A 6 dof collision-free 
-     trajectory containing position coordinates and body attitude 
-     is obtained. The feasibility is verified by simulation 
-     experiments.
+  Since entering the 21st century, the field of multi-rotor UAV has achieved unprecedented development and become a kind of robot system that has successfully entered people's life from the laboratory.
+In order to break through the bottleneck of underactuated UAV in the current market, many kinds of over-actuated multi-rotor UAV systems have been developed in recent years.
+As a fully actuated system, the UAV can track a 6-DoF trajectory, effectively enhancing the maneuverability of the multi-rotor UAV and broadening its application scenarios.
+As you can imagine, this would greatly improve the autonomous flight capability of multi-rotor aircraft in complex, crowded environments, and an effective planning algorithm is the key to achieving this improvement.
+The existing planning schemes are mainly based on traditional underactuated aircraft, and there are few precedents for overactuated aircraft.
 
+In order to realize obstacle avoidance planning of over-actuated multi-rotor aircraft in complex environment, a global trajectory planner with full degree of freedom based on optimization is designed for over-actuated multi-rotor aircraft.
+According to the safety constraints represented by a series of convex polyhedra, combined with the whole-body shape and dynamics constraints of the aircraft, the planner finally plans an optimal collision free trajectory from the starting point to the end point.
+
+The theoretical part of this thesis introduces the design and implementation of the front-end path search algorithm and the security constraint generation algorithm of the planner, and describes the principle and design of the back-end trajectory optimization algorithm in detail.
+In the part of the back-end optimization algorithm, two attitude planning schemes based on Euler Angle and quaternion are introduced respectively, and the derivation of corresponding formulas is given in the appendix.
+
+In the experimental part, planning experiments are carried out for different simulation scenarios with an omnidirectional hexarotor aircraft mechanism as the platform to verify and compare the feasibility, effectiveness and computational efficiency of the planners designed based on the above two attitude planning schemes.
+Then, simulation experiments are carried out based on Gazebo and PX4, and the obstacle avoidance flight of omnidirectional hexarotor aircraft in narrow and long passage and other extreme environments is successfully realized by using the planner designed in this thesis.
+Finally, experiments are carried out on a physical platform to verify the practicality of the planner.
 \end{eabstract}

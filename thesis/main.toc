@@ -9,61 +9,64 @@
 \contentsline {subsection}{\numberline {1.2.2}过驱动多旋翼飞行器}{5}{subsection.1.2.2}%
 \contentsline {subsection}{\numberline {1.2.3}过驱动飞行器的轨迹规划}{6}{subsection.1.2.3}%
 \contentsline {section}{\numberline {1.3}本文的主要研究内容}{6}{section.1.3}%
-\contentsline {chapter}{\numberline {第2章}排版图片}{8}{chapter.2}%
+\contentsline {chapter}{\numberline {第2章}过驱动多旋翼飞行器的结构设计与动力学分析}{8}{chapter.2}%
 \contentsline {section}{\numberline {2.1}引言}{8}{section.2.1}%
-\contentsline {section}{\numberline {2.2}博士毕业论文双语题注}{8}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}本硕论文题注}{9}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}并排图和子图}{9}{subsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.2.1}并排图}{9}{subsubsection.2.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2.2}子图}{10}{subsubsection.2.2.2.2}%
-\contentsline {section}{\numberline {2.3}如何做出符合规范的漂亮的图}{16}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Tikz作图举例}{16}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}R作图}{16}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}专业绘图工具}{16}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}本章小结}{18}{section.2.4}%
-\contentsline {chapter}{\numberline {第3章}排版公式}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}引言}{19}{section.3.1}%
-\contentsline {section}{\numberline {3.2}对物理量符号进行注释的情况}{19}{section.3.2}%
-\contentsline {section}{\numberline {3.3}子公式}{20}{section.3.3}%
-\contentsline {section}{\numberline {3.4}本章小结}{20}{section.3.4}%
-\contentsline {chapter}{\numberline {第4章}排版表格}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}引言}{21}{section.4.1}%
-\contentsline {section}{\numberline {4.2}普通表格的绘制方法}{21}{section.4.2}%
-\contentsline {section}{\numberline {4.3}长表格的绘制方法}{21}{section.4.3}%
-\contentsline {section}{\numberline {4.4}列宽可调表格的绘制方法}{23}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}表格内某单元格内容过长的情况}{23}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}排版横版表格的举例}{24}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}本章小结}{24}{section.4.5}%
-\contentsline {chapter}{\numberline {第5章}引用参考文献}{26}{chapter.5}%
-\contentsline {section}{\numberline {5.1}引言}{26}{section.5.1}%
-\contentsline {section}{\numberline {5.2}参考文献引用方法}{26}{section.5.2}%
-\contentsline {section}{\numberline {5.3}本章小结}{26}{section.5.3}%
-\contentsline {chapter}{\numberline {第6章}补充说明}{28}{chapter.6}%
-\contentsline {section}{\numberline {6.1}引言}{28}{section.6.1}%
-\contentsline {section}{\numberline {6.2}关于数字}{28}{section.6.2}%
-\contentsline {section}{\numberline {6.3}索引示例}{29}{section.6.3}%
-\contentsline {section}{\numberline {6.4}术语排版举例}{29}{section.6.4}%
-\contentsline {section}{\numberline {6.5}定理和定义等}{29}{section.6.5}%
-\contentsline {section}{\numberline {6.6}其他杂项}{30}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}右翻页}{30}{subsection.6.6.1}%
-\contentsline {subsection}{\numberline {6.6.2}算法}{30}{subsection.6.6.2}%
-\contentsline {subsection}{\numberline {6.6.3}脚注}{30}{subsection.6.6.3}%
-\contentsline {subsection}{\numberline {6.6.4}源码}{30}{subsection.6.6.4}%
-\contentsline {subsection}{\numberline {6.6.5}思源宋体}{31}{subsection.6.6.5}%
-\contentsline {subsection}{\numberline {6.6.6}术语词汇管理}{31}{subsection.6.6.6}%
-\contentsline {section}{\numberline {6.7}本章小结}{31}{section.6.7}%
-\contentsline {chapter}{\heiti 结\hspace {\ccwd }论}{32}{section*.14}%
-\contentsline {chapter}{\heiti 参考文献}{33}{section*.17}%
-\contentsline {chapter}{原创性声明 }{36}{chapter*.20}%
-\contentsline {chapter}{\heiti 致\hspace {\ccwd }谢}{37}{section*.21}%
-\contentsline {chapter}{\numberline {附录 A}外文资料翻译}{38}{appendix.A}%
-\contentsline {section}{\numberline {A.1}单目标规划}{38}{section.A.1}%
-\contentsline {subsection}{\numberline {A.1.1}线性规划}{38}{subsection.A.1.1}%
-\contentsline {subsection}{\numberline {A.1.2}非线性规划}{39}{subsection.A.1.2}%
-\contentsline {subsection}{\numberline {A.1.3}整数规划}{39}{subsection.A.1.3}%
-\contentsline {chapter}{\numberline {附录 B}外文资料原文}{40}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Single-Objective Programming}{40}{section.B.1}%
-\contentsline {subsection}{\numberline {B.1.1}Linear Programming}{41}{subsection.B.1.1}%
-\contentsline {subsection}{\numberline {B.1.2}Nonlinear Programming}{42}{subsection.B.1.2}%
-\contentsline {subsection}{\numberline {B.1.3}Integer Programming}{42}{subsection.B.1.3}%
-\contentsline {chapter}{\numberline {附录 C}其它附录}{44}{appendix.C}%
+\contentsline {section}{\numberline {2.2}过驱动多旋翼飞行器的设计}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}机械结构设计}{8}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}航电系统设计}{10}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}OmniHex的动力学分析}{11}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}动力学建模与微分平坦性分析}{12}{subsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.1}机体坐标系及基本量规定}{12}{subsubsection.2.3.1.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.2}动力学建模}{13}{subsubsection.2.3.1.2}%
+\contentsline {subsubsection}{\numberline {2.3.1.3}微分平坦性分析}{14}{subsubsection.2.3.1.3}%
+\contentsline {section}{\numberline {2.4}本章小结}{17}{section.2.4}%
+\contentsline {chapter}{\numberline {第3章}前端路径搜索算法及安全约束生成算法设计}{18}{chapter.3}%
+\contentsline {section}{\numberline {3.1}引言}{18}{section.3.1}%
+\contentsline {section}{\numberline {3.2}路径搜索算法的设计}{18}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}路径搜索算法概述}{18}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}$SE(3)$空间中的RRT算法}{19}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}RRT算法原理}{19}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}$SE(3)$状态空间中的相关操作}{20}{subsubsection.3.2.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}近邻搜索}{22}{subsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.1}GNAT数据结构简介}{22}{subsubsection.3.2.3.1}%
+\contentsline {subsubsection}{\numberline {3.2.3.2}基于GNAT的近邻搜索}{24}{subsubsection.3.2.3.2}%
+\contentsline {subsection}{\numberline {3.2.4}有效性检测}{25}{subsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.4.1}基于点云的状态有效性检测}{26}{subsubsection.3.2.4.1}%
+\contentsline {subsubsection}{\numberline {3.2.4.2}基于八叉树地图的状态有效性检测}{27}{subsubsection.3.2.4.2}%
+\contentsline {subsection}{\numberline {3.2.5}算法效果}{27}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}3D安全飞行走廊生成算法的设计}{28}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}算法原理}{29}{subsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1.1}无碰撞椭球的生成}{29}{subsubsection.3.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.3.1.2}凸多面体的生成}{29}{subsubsection.3.3.1.2}%
+\contentsline {subsection}{\numberline {3.3.2}效果展示}{30}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}本章小结}{31}{section.3.4}%
+\contentsline {chapter}{\numberline {第4章}后端轨迹生成算法设计}{32}{chapter.4}%
+\contentsline {section}{\numberline {4.1}引言}{32}{section.4.1}%
+\contentsline {section}{\numberline {4.2}几何约束下多旋翼的轨迹优化原理}{32}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}问题形式}{32}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}最优性条件与MINCO轨迹类}{34}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}MINCO轨迹类中的梯度计算}{36}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}几何约束的消去}{37}{subsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}时间约束的消去}{38}{subsubsection.4.2.4.1}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}空间约束的消去}{39}{subsubsection.4.2.4.2}%
+\contentsline {subsection}{\numberline {4.2.5}连续时间约束$\mathcal {G}$的处理}{40}{subsection.4.2.5}%
+\contentsline {section}{\numberline {4.3}几何约束下过驱动飞行器的$SE(3)$轨迹优化算法设计}{41}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}优化问题构建}{42}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}6自由度轨迹优化问题的形式}{42}{subsubsection.4.3.1.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.2}连续时间约束$\mathcal {G}$及时间积分罚函数的形式}{43}{subsubsection.4.3.1.2}%
+\contentsline {subsection}{\numberline {4.3.2}基于欧拉角姿态表示的过驱动飞行器$SE(3)$轨迹生成}{45}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}基于四元数姿态表示的过驱动飞行器$SE(3)$轨迹生成}{46}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}本章小结}{46}{section.4.4}%
+\contentsline {chapter}{\numberline {第5章}规划器测试与实验}{48}{chapter.5}%
+\contentsline {section}{\numberline {5.1}引言}{48}{section.5.1}%
+\contentsline {section}{\numberline {5.2}规划器效果测试}{48}{section.5.2}%
+\contentsline {section}{\numberline {5.3}仿真测试}{48}{section.5.3}%
+\contentsline {section}{\numberline {5.4}实物测试}{48}{section.5.4}%
+\contentsline {section}{\numberline {5.5}本章小结}{48}{section.5.5}%
+\contentsline {chapter}{\heiti 结\hspace {\ccwd }论}{49}{section*.13}%
+\contentsline {chapter}{\heiti 参考文献}{50}{section*.16}%
+\contentsline {chapter}{原创性声明 }{54}{chapter*.19}%
+\contentsline {chapter}{\heiti 致\hspace {\ccwd }谢}{55}{section*.20}%
+\contentsline {chapter}{\numberline {附录 A}罚函数中正求和项的梯度}{56}{appendix.A}%
+\contentsline {chapter}{\numberline {附录 B}基于欧拉角姿态表示的罚函数梯度}{57}{appendix.B}%
+\contentsline {chapter}{\numberline {附录 C}基于四元数姿态表示的罚函数梯度}{58}{appendix.C}%

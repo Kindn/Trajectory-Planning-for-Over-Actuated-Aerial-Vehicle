@@ -77,6 +77,10 @@
    \addcontentsline{aen}{algoen}{\protect\numberline{\thealgoen}{#2}}
 }
 
+% \algnewcommand\algorithmicinput{\textbf{Input:}}
+% \algnewcommand\algorithmicoutput{\textbf{Output:}}
+% \usepackage{algpseudocodex}
+
 % 排版源码所使用的环境可以有两种。listings和minted
 \RequirePackage{listings}
 
@@ -442,6 +446,13 @@
 \newcommand\vX{\mathbf{X}}
 \newcommand\vy{\mathbf{y}}
 \newcommand\vY{\mathbf{Y}}
+
+% 转置
+\newcommand{\trans}[1]{{#1}^{\text{T}}}
+
+% 导数和偏导
+\newcommand{\diff}[2]{\frac{\text{d}{#1}}{\text{d}{#2}}}
+\newcommand{\pdiff}[2]{\frac{\partial{#1}}{\partial{#2}}}
 
 % 定义新数学符号
 \DeclareMathOperator{\sgn}{sgn}

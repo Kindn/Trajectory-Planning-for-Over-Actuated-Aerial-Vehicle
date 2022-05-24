@@ -24,10 +24,10 @@
 \providecommand{\bibdate}[1]{#1}
 \providecommand{\biburl}[1]{\newline\url{#1}}
 
-\bibitem{2012Underactuated}
-\bibauthor{TEDRAKE R}\@. \bibtitle{Underactuated Robotics: Learning, Planning,
-  and Control for Efficient and Agile Machines: Course Notes for MIT 6.832.
-  Working draft edition}\bibmark{\,［J］}\@，\bibyear{2012}\@.
+\bibitem{underactuated}
+\bibauthor{TEDRAKE R}\@. \bibbooktitle{Underactuated
+  Robotics}\bibmark{\,［M/OL］}\@. \bibyear{2022}\@.
+  \url{http://underactuated.mit.edu}\@.
 
 \bibitem{2003Flatness}
 \bibauthor{FLIESS M\@，LéVINE J\@，MARTIN P，et~al}\@. \bibtitle{Flatness
@@ -158,61 +158,147 @@
   international conference on robotics and automation
   (ICRA)}\@，\bibaddress{［S.l.］}\@，\bibyear{2015}\thinspace{}\textnormal{：}\bibpages{6235\textnormal{-}6240}\@.
 
-\bibitem{ren2010}
-\bibauthor{任春珍\@，杨再华\@，孙刚，等}\@.
-  \bibtitle{空环境飞行器交会对接设备精测工艺方法研究}\bibmark{\,［J］}\@.
-  \bibjournal{航天器环境工程}\@，\bibyear{2010}\@，\bibvolume{27}\bibnumber{（6）\!\!}\thinspace{}\textnormal{：}\bibpages{768\textnormal{-}771}\@.
+\bibitem{taylor2001vrpn}
+\bibauthor{TAYLOR R~M\@，HUDSON T~C\@，SEEGER A，et~al}\@. \bibtitle{VRPN: a
+  device-independent, network-transparent VR peripheral
+  system}\bibmark{\,［C］} //\thinspace{}\bibbooktitle{Proceedings of the ACM
+  symposium on Virtual reality software and
+  technology}\@，\bibaddress{［S.l.］}\@，\bibyear{2001}\thinspace{}\textnormal{：}\bibpages{55\textnormal{-}61}\@.
 
-\bibitem{Gravagne2003}
-\bibauthor{GRAVAGNE I~A\@，RAHN C~D\@，WALKER I~D}\@. \bibtitle{Large
-  Deflection Dynamics and Control for Planar Continuum
-  Robots}\bibmark{\,［J］}\@. \bibjournal{IEEE/ASME Transactions on
-  Mechatronics}\@，\bibyear{2003}\@，\bibvolume{8}\bibnumber{（2）\!\!}\thinspace{}\textnormal{：}\bibpages{299\textnormal{-}307}\@.
+\bibitem{bodie2018towards}
+\bibauthor{BODIE K\@，TAYLOR Z\@，KAMEL M，et~al}\@. \bibtitle{Towards
+  efficient full pose omnidirectionality with overactuated
+  mavs}\bibmark{\,［C］} //\thinspace{}\bibbooktitle{International Symposium
+  on Experimental
+  Robotics}\@，\bibaddress{［S.l.］}\@，\bibyear{2018}\thinspace{}\textnormal{：}\bibpages{85\textnormal{-}95}\@.
 
-\bibitem{webster2010}
-\bibauthor{WEBSTER~III R~J\@，JONES B~A}\@. \bibtitle{Design and Kinematic
-  Modeling of Constant Curvature Continuum Robots: A
-  Review}\bibmark{\,［J］}\@. \bibjournal{The International Journal of
-  Robotics
-  Research}\@，\bibyear{2010}\@，\bibvolume{29}\bibnumber{（13）\!\!}\thinspace{}\textnormal{：}\bibpages{1661\textnormal{-}1683}\@.
+\bibitem{fliess1995flatness}
+\bibauthor{FLIESS M\@，L{\'E}VINE J\@，MARTIN P，et~al}\@.
+  \bibtitle{Flatness and defect of non-linear systems: introductory theory and
+  examples}\bibmark{\,［J］}\@. \bibjournal{International journal of
+  control}\@，\bibyear{1995}\@，\bibvolume{61}\bibnumber{（6）\!\!}\thinspace{}\textnormal{：}\bibpages{1327\textnormal{-}1361}\@.
 
-\bibitem{liu2016}
-\bibauthor{刘天亮}\@.
-  \bibtitle{面向狭小空间作业的绳索驱动超冗余机械臂的研究}\bibmark{\,［D］}\@.
-  \bibaddress{深圳}\thinspace{}\textnormal{：}\bibschool{哈尔滨工业大学}\@，\bibyear{2016}\thinspace{}\textnormal{：}\bibpages{61\textnormal{-}63}\@.
+\bibitem{hart1968formal}
+\bibauthor{HART P~E\@，NILSSON N~J\@，RAPHAEL B}\@. \bibtitle{A formal basis
+  for the heuristic determination of minimum cost paths}\bibmark{\,［J］}\@.
+  \bibjournal{IEEE transactions on Systems Science and
+  Cybernetics}\@，\bibyear{1968}\@，\bibvolume{4}\bibnumber{（2）\!\!}\thinspace{}\textnormal{：}\bibpages{100\textnormal{-}107}\@.
 
-\bibitem{fu2018}
-\bibauthor{付亚南}\@.
-  \bibtitle{狭小空间作业绳驱分段联动机器人设计及控制研究}\bibmark{\,［D］}\@.
-  \bibaddress{深圳}\thinspace{}\textnormal{：}\bibschool{哈尔滨工业大学}\@，\bibyear{2018}\thinspace{}\textnormal{：}\bibpages{12\textnormal{-}13}\@.
+\bibitem{harabor2011online}
+\bibauthor{HARABOR D\@，GRASTIEN A}\@. \bibtitle{Online graph pruning for
+  pathfinding on grid maps}\bibmark{\,［C］}
+  //\thinspace{}\bibbooktitle{Proceedings of the AAAI Conference on Artificial
+  Intelligence\thinspace{}\textnormal{：}Vol~25}\@，\bibaddress{［S.l.］}\@，\bibyear{2011}\thinspace{}\textnormal{：}\bibpages{1114\textnormal{-}1119}\@.
 
-\bibitem{zhai2015}
-\bibauthor{翟士民\@，刘荣\@，薛彤}\@.
-  \bibtitle{绳驱动连续型机械臂设计}\bibmark{\,［J］}\@.
-  \bibjournal{机械工程与自动化}\@，\bibyear{2015}\@，\bibvolume{2}\thinspace{}\textnormal{：}\bibpages{119\textnormal{-}121}\@.
+\bibitem{kavraki1996probabilistic}
+\bibauthor{KAVRAKI L~E\@，SVESTKA P\@，LATOMBE J-C，et~al}\@.
+  \bibtitle{Probabilistic roadmaps for path planning in high-dimensional
+  configuration spaces}\bibmark{\,［J］}\@. \bibjournal{IEEE transactions on
+  Robotics and
+  Automation}\@，\bibyear{1996}\@，\bibvolume{12}\bibnumber{（4）\!\!}\thinspace{}\textnormal{：}\bibpages{566\textnormal{-}580}\@.
 
-\bibitem{yao2015}
-\bibauthor{姚艳彬\@，杜兆才\@，魏志强}\@.
-  \bibtitle{蛇形臂机器人装配系统研究}\bibmark{\,［J］}\@.
-  \bibjournal{航空制造技术}\@，\bibyear{2015}\@，\bibvolume{491}\bibnumber{（21）\!\!}\thinspace{}\textnormal{：}\bibpages{26\textnormal{-}30}\@.
+\bibitem{lavalle1998rapidly}
+\bibauthor{LAVALLE S~M\@，OTHERS}\@. \bibtitle{Rapidly-exploring random trees:
+  A new tool for path planning}\bibmark{\,［J］}\@，\bibyear{1998}\@.
 
-\bibitem{jones2006}
-\bibauthor{JONES B~A\@，WALKER I~D}\@. \bibtitle{Kinematics for Multisection
-  Continuum Robots}\bibmark{\,［J］}\@. \bibjournal{IEEE Transactions on
-  Robotics}\@，\bibyear{2006}\@，\bibvolume{22}\bibnumber{（1）\!\!}\thinspace{}\textnormal{：}\bibpages{43\textnormal{-}55}\@.
+\bibitem{kavraki1998analysis}
+\bibauthor{KAVRAKI L~E\@，KOLOUNTZAKIS M~N\@，LATOMBE J-C}\@.
+  \bibtitle{Analysis of probabilistic roadmaps for path
+  planning}\bibmark{\,［J］}\@. \bibjournal{IEEE Transactions on Robotics and
+  automation}\@，\bibyear{1998}\@，\bibvolume{14}\bibnumber{（1）\!\!}\thinspace{}\textnormal{：}\bibpages{166\textnormal{-}171}\@.
 
-\bibitem{mcmahan2005}
-\bibauthor{MCMAHAN W\@，JONES B~A\@，WALKER I~D}\@. \bibtitle{Design and
-  Implementation of a Multi-section Continuum Robot:
-  Air-Octor}\bibmark{\,［C］} //\thinspace{}\bibbooktitle{IEEE/RSJ
-  International Conference on Intelligent Robots and
-  Systems}\@，\bibaddress{Shanghai,
-  China}\@，\bibyear{2005}\thinspace{}\textnormal{：}\bibpages{2578\textnormal{-}2585}\@.
+\bibitem{frazzoli2002real}
+\bibauthor{FRAZZOLI E\@，DAHLEH M~A\@，FERON E}\@. \bibtitle{Real-time motion
+  planning for agile autonomous vehicles}\bibmark{\,［J］}\@.
+  \bibjournal{Journal of guidance, control, and
+  dynamics}\@，\bibyear{2002}\@，\bibvolume{25}\bibnumber{（1）\!\!}\thinspace{}\textnormal{：}\bibpages{116\textnormal{-}129}\@.
 
-\bibitem{jones2004}
-\bibauthor{JONES B~A\@，MCMAHAN W\@，WALKER I}\@. \bibtitle{Design and
-  Analysis of a Novel Pneumatic Manipulator}\bibmark{\,［C］}
-  //\thinspace{}\bibbooktitle{IFAC Symposium on Mechatronic
-  Systems}\@，\bibaddress{Hanburg，German}\@，\bibyear{2004}\thinspace{}\textnormal{：}\bibpages{745\textnormal{-}750}\@.
+\bibitem{karaman2011sampling}
+\bibauthor{KARAMAN S\@，FRAZZOLI E}\@. \bibtitle{Sampling-based algorithms for
+  optimal motion planning}\bibmark{\,［J］}\@. \bibjournal{The international
+  journal of robotics
+  research}\@，\bibyear{2011}\@，\bibvolume{30}\bibnumber{（7）\!\!}\thinspace{}\textnormal{：}\bibpages{846\textnormal{-}894}\@.
+
+\bibitem{gammell2014informed}
+\bibauthor{GAMMELL J~D\@，SRINIVASA S~S\@，BARFOOT T~D}\@. \bibtitle{Informed
+  RRT*: Optimal sampling-based path planning focused via direct sampling of an
+  admissible ellipsoidal heuristic}\bibmark{\,［C］}
+  //\thinspace{}\bibbooktitle{2014 IEEE/RSJ International Conference on
+  Intelligent Robots and
+  Systems}\@，\bibaddress{［S.l.］}\@，\bibyear{2014}\thinspace{}\textnormal{：}\bibpages{2997\textnormal{-}3004}\@.
+
+\bibitem{orthey2019rapidly}
+\bibauthor{ORTHEY A\@，TOUSSAINT M}\@. \bibtitle{Rapidly-exploring
+  quotient-space trees: Motion planning using sequential
+  simplifications}\bibmark{\,［J］}\@. \bibjournal{arXiv preprint
+  arXiv:1906.01350}\@，\bibyear{2019}\@.
+
+\bibitem{kuffner2004effective}
+\bibauthor{KUFFNER J~J}\@. \bibtitle{Effective sampling and distance metrics
+  for 3D rigid body path planning}\bibmark{\,［C］}
+  //\thinspace{}\bibbooktitle{IEEE International Conference on Robotics and
+  Automation, 2004. Proceedings. ICRA'04.
+  2004\thinspace{}\textnormal{：}Vol~4}\@，\bibaddress{［S.l.］}\@，\bibyear{2004}\thinspace{}\textnormal{：}\bibpages{3993\textnormal{-}3998}\@.
+
+\bibitem{bentley1975multidimensional}
+\bibauthor{BENTLEY J~L}\@. \bibtitle{Multidimensional binary search trees used
+  for associative searching}\bibmark{\,［J］}\@. \bibjournal{Communications
+  of the
+  ACM}\@，\bibyear{1975}\@，\bibvolume{18}\bibnumber{（9）\!\!}\thinspace{}\textnormal{：}\bibpages{509\textnormal{-}517}\@.
+
+\bibitem{1995Near}
+\bibauthor{BRIN S}\@. \bibtitle{Near neighbor search in large metric
+  spaces}\bibmark{\,［J］}\@. \bibjournal{Proc. of 21st Conf. on very large
+  database, Zurich, Switzerland, 1995}\@，\bibyear{1995}\@.
+
+\bibitem{sucan2012open}
+\bibauthor{SUCAN I~A\@，MOLL M\@，KAVRAKI L~E}\@. \bibtitle{The open motion
+  planning library}\bibmark{\,［J］}\@. \bibjournal{IEEE Robotics \&
+  Automation
+  Magazine}\@，\bibyear{2012}\@，\bibvolume{19}\bibnumber{（4）\!\!}\thinspace{}\textnormal{：}\bibpages{72\textnormal{-}82}\@.
+
+\bibitem{pan2012fcl}
+\bibauthor{PAN J\@，CHITTA S\@，MANOCHA D}\@. \bibtitle{FCL: A general
+  purpose library for collision and proximity queries}\bibmark{\,［C］}
+  //\thinspace{}\bibbooktitle{2012 IEEE International Conference on Robotics
+  and
+  Automation}\@，\bibaddress{［S.l.］}\@，\bibyear{2012}\thinspace{}\textnormal{：}\bibpages{3859\textnormal{-}3866}\@.
+
+\bibitem{hornung2013octomap}
+\bibauthor{HORNUNG A\@，WURM K~M\@，BENNEWITZ M，et~al}\@.
+  \bibtitle{OctoMap: An efficient probabilistic 3D mapping framework based on
+  octrees}\bibmark{\,［J］}\@. \bibjournal{Autonomous
+  robots}\@，\bibyear{2013}\@，\bibvolume{34}\bibnumber{（3）\!\!}\thinspace{}\textnormal{：}\bibpages{189\textnormal{-}206}\@.
+
+\bibitem{mohta2018fast}
+\bibauthor{MOHTA K\@，WATTERSON M\@，MULGAONKAR Y，et~al}\@. \bibtitle{Fast,
+  autonomous flight in GPS-denied and cluttered
+  environments}\bibmark{\,［J］}\@. \bibjournal{Journal of Field
+  Robotics}\@，\bibyear{2018}\@，\bibvolume{35}\bibnumber{（1）\!\!}\thinspace{}\textnormal{：}\bibpages{101\textnormal{-}120}\@.
+
+\bibitem{gao2019flying}
+\bibauthor{GAO F\@，WU W\@，GAO W，et~al}\@. \bibtitle{Flying on point
+  clouds: Online trajectory generation and autonomous navigation for quadrotors
+  in cluttered environments}\bibmark{\,［J］}\@. \bibjournal{Journal of Field
+  Robotics}\@，\bibyear{2019}\@，\bibvolume{36}\bibnumber{（4）\!\!}\thinspace{}\textnormal{：}\bibpages{710\textnormal{-}733}\@.
+
+\bibitem{2017Planning}
+\bibauthor{LIU S\@，WATTERSON M\@，MOHTA K，et~al}\@. \bibtitle{Planning
+  Dynamically Feasible Trajectories for Quadrotors Using Safe Flight Corridors
+  in 3-D Complex Environments}\bibmark{\,［J/OL］}\@. \bibjournal{IEEE
+  Robotics and Automation
+  Letters}\@，\bibyear{2017}\@，\bibvolume{2}\bibnumber{（3）\!\!}\thinspace{}\textnormal{：}\bibpages{1688\textnormal{-}1695}\@.
+  \url{http://dx.doi.org/10.1109/LRA.2017.2663526}\@.
+
+\bibitem{deits2015computing}
+\bibauthor{DEITS R\@，TEDRAKE R}\@. \bibtitle{Computing large convex regions
+  of obstacle-free space through semidefinite programming}\bibmark{\,［G］}
+  //\thinspace{}\bibbooktitle{Algorithmic foundations of robotics XI}\@.
+  \bibaddress{［S.l.］}\thinspace{}\textnormal{：}\bibpublisher{Springer}\@，\bibyear{2015}\thinspace{}\textnormal{：}\bibpages{109\textnormal{-}124}\@.
+
+\bibitem{zhou2022swarm}
+\bibauthor{ZHOU X\@，WEN X\@，WANG Z，et~al}\@. \bibtitle{Swarm of micro
+  flying robots in the wild}\bibmark{\,［J］}\@. \bibjournal{Science
+  Robotics}\@，\bibyear{2022}\@，\bibvolume{7}\bibnumber{（66）\!\!}\thinspace{}\textnormal{：}\bibpages{eabm5954}\@.
 
 \end{thebibliography}

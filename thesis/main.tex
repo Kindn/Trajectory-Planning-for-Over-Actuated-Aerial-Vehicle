@@ -54,6 +54,13 @@
 % 自定义设置与额外加载的宏包请写在 \file{hitszthesis.sty} 里
 \usepackage{hitszthesis}
 
+\usepackage{url}
+%\usepackage{algorithm}
+\usepackage{algorithmic}
+\renewcommand{\algorithmicrequire}{ \textbf{Input}}
+\renewcommand{\algorithmicensure}{ \textbf{Output}}
+
+
 % 图片存放路径，在这些文件夹里的图片可以直接使用图片文件名调用
 \graphicspath{{figures/}{pictures/}}
 
@@ -102,7 +109,7 @@
 \input{body/chapter05}
 
 % 第6章
-\input{body/chapter06}
+%\input{body/chapter06}
 
 % 开始写正文之后的部分
 \backmatter

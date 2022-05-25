@@ -438,13 +438,16 @@ GCOPTER框架就是通过MINCO的时空变形来优化目标函数，从而得�
 然后再如\figref{fig:elimination_of_ball_constraints}所示使用逆球极投影（inverse stereographic projection）变换和一个正交投影变换可以消去球约束，
 最后得到一个从整个$\mathbb{R}^{\hat{n}}$到凸多面体$\mathcal{P}$的映射：
 \begin{equation}
-  f_{\mathcal{H}}(\bm{\xi}) = \bm{v}_0 + \frac{4\hat{\bm{V}}[\bm{\xi}]^2}{(\trans{\bm{xi}}\bm{xi} + 1)^2} \in \mathcal{P}, 
+  f_{\mathcal{H}}(\bm{\xi}) = \bm{v}_0 + \frac{4\hat{\bm{V}}[\bm{\xi}]^2}{(\trans{\bm{\xi}}\bm{\xi} + 1)^2} \in \mathcal{P}, 
   \forall \bm{\xi} \in \mathbb{R}^{\hat{n}}
   \label{equ:polyhedron_constraint_elimination_map}
 \end{equation}
 当$\bm{\xi}$在整个$\mathbb{R}^{\hat{n}}$中自由运动时，
 经由映射$f_{\mathcal{H}}$得到的$\mathbb{R}^n$中的像始终位于凸多面体$\mathcal{P}$内。
 这样，与时间约束类似，用凸多面体表示的空间约束被用引入新的目标变量$\bm{\xi}$的方式消去了。
+在优化过程开始之前会给定的初始$\bm{q}_i$，其对应的初始$\bm{\xi}_i$可以通过最小化$\Vert \bm{f}_{\mathcal{H}}(\bm{\xi}_i) - \bm{q}_i \Vert_2^2$的值来得到。
+
+
 若记${\partial J}/{\partial \bm{q}_i}$，则$J$关于对应的$\bm{\xi}_i$的梯度就可以写为：
 \begin{equation}
   \pdiff{J}{\bm{\xi}_i} = 
@@ -767,6 +770,33 @@ Terzakis等人提出过利用球极投影参数化四元数的方式。
   \end{bmatrix} \in \mathbb{R}^{3 \times 4} \label{equ:matrix_G}
 \end{gather}
 $\bm{G}$以及罚函数梯度的具体形式详见附录\ref{appdx:C}。
+
+\subsection{算法实现}\label{subsec:impl_of_traj_opt_algo}
+如\equref{equ:final_form_of_time_regularized_control_effort}所示， 
+本优化器不固定轨迹总时间，且时间正则项与总时间成正比，也就是说优化时会倾向于使轨迹更快地到达终点；
+此外，本课题在实现优化器时使用的时间约束消去微分同胚变换并非指数函数，而是参考GCOPTER官方实现\footnote{https://github.com/ZJU-FAST-Lab/GCOPTER}使用下述形式的微分同胚映射：
+\begin{equation}
+  T_i = 
+  \begin{cases}
+    1 + \tau_i(0.5\tau_i + 1), \quad if \ \tau_i > 0 \\
+    {1}/({1 + \tau_i(0.5\tau_i - 1}), \quad if \ \tau_i \leq 0
+  \end{cases}
+  \label{equ:the_actual_diffeomorphism_used}
+\end{equation}
+
+
+为了提高优化器的复用性、充分发挥几何约束优化器灵活性的优点，对于自定义约束$\mathcal{G}$，
+在实际实现时将时间积分罚函数抽象为了SE3TimeIntPenalty类，提供evaluate()公共接口，
+此接口返回罚函数值及其关于$\bm{c}$和$\bm{T}$的梯度，
+当面对不同的任务需求时，只需继承SE3TimeIntPenalty类，用需求对应的罚函数重写evaluate()接口，并与优化器关联即可。
+
+在实现中采用L-BFGS算法\cite{liu1989limited}作为无约束优化算法，Wang有开源的算法实现\footnote{https://github.com/ZJU-FAST-Lab/LBFGS-Lite}，
+但其中仅使用Lewis等人提出的线搜索方法\cite{lewis2013nonsmooth}，该方法若在一定迭代次数后不能找到满足条件的点则视为线搜索失败，随之整个优化过程也宣告失败；
+受限于计算机对极小数字的分辨能力，在本课题这种目标函数数值特性不太好的情况下就很难优化成功。
+于是本课题在重新实现一遍L-BFGS算法的同时，使用的线搜索策略变为：若某次Lewis线搜索失败，则使用Backtracking法，
+这样可确保优化过程不会因为线搜索失败而中断。
+
+本课题中上述优化器使用C++17标准实现。
 
 \section{本章小结}\label{sec:summary_4}
 本章首先详细介绍了几何约束下多旋翼飞行器轨迹优化框架的基本原理，

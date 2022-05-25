@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.5.21)  24 MAY 2022 20:58
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2022.5.21)  26 MAY 2022 04:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1894,7 +1894,7 @@ File: figures/point_cloud_rrtse3_2_overview.png Graphic file (type bmp)
 File: figures/point_cloud_rrtse3_2_detail.png Graphic file (type bmp)
 <figures/point_cloud_rrtse3_2_detail.png>
 
-Overfull \hbox (20.69743pt too wide) in paragraph at lines 447--457
+Overfull \hbox (20.69743pt too wide) in paragraph at lines 449--459
  [][] 
  []
 
@@ -1902,7 +1902,7 @@ Overfull \hbox (20.69743pt too wide) in paragraph at lines 447--457
 File: figures/get_ellipsoid.png Graphic file (type bmp)
 <figures/get_ellipsoid.png>
 
-Overfull \hbox (24.09pt too wide) detected at line 524
+Overfull \hbox (24.09pt too wide) detected at line 526
 [][] 
  []
 
@@ -1913,9 +1913,9 @@ File: figures/get_polyhedron.png Graphic file (type bmp)
 <figures/get_polyhedron.png>
 [29]
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 555.
+(Font)              scaled to size 5.0pt on input line 557.
 
-Overfull \hbox (24.09pt too wide) detected at line 563
+Overfull \hbox (24.09pt too wide) detected at line 565
 [][] 
  []
 
@@ -1956,20 +1956,20 @@ File: figures/ball_constraint_elimination.png Graphic file (type bmp)
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 458.
+(hyperref)                removing `math shift' on input line 461.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 458.
+(hyperref)                removing `math shift' on input line 461.
 
 [40]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 513.
+(hyperref)                removing `math shift' on input line 516.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 513.
+(hyperref)                removing `math shift' on input line 516.
 
 [41] [42]
 File: figures/using_polyhedron_to_approximate_geometry_of_drone.png Graphic file (type bmp)
@@ -1977,44 +1977,73 @@ File: figures/using_polyhedron_to_approximate_geometry_of_drone.png Graphic file
  [43] [44]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 685.
+(hyperref)                removing `math shift' on input line 688.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 685.
+(hyperref)                removing `math shift' on input line 688.
 
 
-LaTeX Warning: Command \o invalid in math mode on input line 708.
+LaTeX Warning: Command \o invalid in math mode on input line 711.
 
 
-LaTeX Warning: Command \o invalid in math mode on input line 708.
+LaTeX Warning: Command \o invalid in math mode on input line 711.
 
 
-Overfull \hbox (15.69673pt too wide) detected at line 708
+Overfull \hbox (15.69673pt too wide) detected at line 711
 []
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 722.
+(hyperref)                removing `math shift' on input line 725.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 722.
+(hyperref)                removing `math shift' on input line 725.
 
 [45] [46]) (./body/chapter05.tex [47]
 第5章
-) [48
+File: figures/random_map_overview.png Graphic file (type bmp)
+<figures/random_map_overview.png>
+File: figures/cylinder_obstacles.png Graphic file (type bmp)
+<figures/cylinder_obstacles.png>
+File: figures/circle_obstacles.png Graphic file (type bmp)
+<figures/circle_obstacles.png>
+File: figures/random_map_rpy_planning.png Graphic file (type bmp)
+<figures/random_map_rpy_planning.png>
+File: figures/random_map_quat_planning.png Graphic file (type bmp)
+<figures/random_map_quat_planning.png>
+[48
 
 
-] (./back/conclusion.tex) (./main.bbl [49
+]
+File: figures/random_map_rpy_2/dyn.png Graphic file (type bmp)
+<figures/random_map_rpy_2/dyn.png>
+File: figures/random_map_rpy_2/dyn_3d.png Graphic file (type bmp)
+<figures/random_map_rpy_2/dyn_3d.png>
+File: figures/random_map_quat_4/dyn.png Graphic file (type bmp)
+<figures/random_map_quat_4/dyn.png>
+File: figures/random_map_quat_4/dyn_3d.png Graphic file (type bmp)
+<figures/random_map_quat_4/dyn_3d.png>
+ [49]
+Overfull \hbox (24.68166pt too wide) in paragraph at lines 156--164
+ [][] 
+ []
+
+[50]
+Overfull \hbox (24.68166pt too wide) in paragraph at lines 180--188
+ [][] 
+ []
+
+) [51] [52] (./back/conclusion.tex) (./main.bbl [53
 
 
 
-] [50
+] [54
 
 
-] [51]
+] [55]
 Underfull \hbox (badness 10000) in paragraph at lines 231--235
 []\TU/texgyretermes(0)/m/n/12.045 ORTHEY A\TU/FandolSong-Regular(0)/m/n/12.045 ，| \TU/texgyretermes(0)/m/n/12.045 TOUSSAINT M. Rapidly-exploring quotient-space trees:
  []
@@ -2024,17 +2053,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 231--235
 \TU/texgyretermes(0)/m/n/12.045 Motion planning using sequential simplifications[]. arXiv preprint
  []
 
-[52]) [53]
+[56] [57]) [58]
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/n' will be
 (Font)              scaled to size 15.95961pt on input line 128.
- (./back/acknowledgements.tex [54
+ (./back/acknowledgements.tex [59
 
 
 
 ]
 LaTeX Font Info:    Font shape `TU/texgyretermes(0)/m/sc' will be
 (Font)              scaled to size 12.045pt on input line 9.
-) (./back/appendix01.tex [55
+) (./back/appendix01.tex [60
 
 
 ]
@@ -2044,12 +2073,12 @@ Overfull \hbox (14.31021pt too wide) detected at line 47
 []
  []
 
-) (./back/appendix02.tex [56
+) (./back/appendix02.tex [61
 
 
 ]
 附录 B
-) (./back/appendix03.tex [57
+) (./back/appendix03.tex [62
 
 
 ]
@@ -2058,7 +2087,7 @@ Overfull \hbox (14.31021pt too wide) detected at line 47
 \tf@thm=\write7
 \openout7 = `main.thm'.
 
- [58
+ [63
 
 
 ]
@@ -2068,7 +2097,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 185.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D8C018339FC4C97CC17936956762DC10;8681.
+(rerunfilecheck)             Checksum: E8E27511A4C618DF26EA4DD647904105;9187.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2082,12 +2111,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 44565 strings out of 479819
- 925597 string characters out of 5895846
- 1336354 words of memory out of 5000000
- 60687 multiletter control sequences out of 15000+600000
+ 44687 strings out of 479819
+ 929993 string characters out of 5895846
+ 1338450 words of memory out of 5000000
+ 60794 multiletter control sequences out of 15000+600000
  590187 words of font info for 240 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 68i,18n,126p,2527b,1182s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,18n,126p,2527b,1234s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (64 pages).
+Output written on main.pdf (69 pages).

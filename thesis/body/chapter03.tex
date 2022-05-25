@@ -375,7 +375,7 @@ FCL库提供了与八叉树地图库OctoMap\cite{hornung2013octomap}的接口，
 
 \subsection{算法效果}\label{subsec:performance_of_rrtse3}
 本小节展示所设计的$SE(3)$空间中的RRT算法使用基于点云和基于八叉树地图两种有效性检测方法的搜索效果，
-并且每种方法都分别在障碍物稀疏及穿越狭窄通道两种场景下进行测试。测试中设置步长为0.8m，采样概率为0.9。
+并且每种方法都分别在障碍物稀疏及穿越狭窄通道两种场景下进行测试。测试中设置步长为0.8，采样概率为0.9。
 \begin{figure}[!ht]
   \setlength{\subfigcapskip}{-1bp}
   \centering
@@ -403,7 +403,7 @@ FCL库提供了与八叉树地图库OctoMap\cite{hornung2013octomap}的接口，
 图中蓝色半透明的长方体可视化表达了路径上每个$SE(3)$状态，
 可见算法无论在宽松的环境中还是狭窄的环境中均能成功搜索出一条无碰撞路径，说明有效性检测成功发挥了其作用，
 \figref{fig:rrtse3_octomap_in_narrow_passage_overview}中路径起点和终点附近的弯曲也表现出了RRT算法无法保证解的最优性的性质，
-后续应用时将通过一定策略对路径点数量进行缩减来改善RRT的解中可能存在的这种“舍近求远”的现象。
+后续应用时将通过一定策略对路径点数量进行缩减来改善RRT的解中可能存在的这种局部的“舍近求远”现象。
 
 \begin{figure}[!ht]
   \setlength{\subfigcapskip}{-1bp}
@@ -440,6 +440,8 @@ FCL库提供了与八叉树地图库OctoMap\cite{hornung2013octomap}的接口，
 而基于八叉树的方法检测只需要用到障碍物表面信息。
 如果在生成点云时能够合理地控制点的数量，尽量剔除冗余点，就能使点云法的求解速度大大提高；
 在后文中所用到的一个50m$\times$50m大小、障碍物较为稠密的随机地图中，使用点云法可以在数百毫秒内搜索出一条对角路径。
+另外，利用OctoMap库和PCL库\cite{rusu20113d}可以很方便地在点云和八叉树之间进行转换，
+可以根据实际需求灵活地选择地图形式。
 
 \begin{table}[htbp]
   \caption{关于$SE(3)$空间RRT算法的一些数据\label{tab:rrtse3_performance_data}}

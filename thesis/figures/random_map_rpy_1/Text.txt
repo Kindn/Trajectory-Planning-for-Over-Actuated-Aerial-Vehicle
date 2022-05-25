@@ -1,0 +1,6 @@
+RRT iters: 1904
+tree size: 736
+RRT time: 0.305776s
+SFC time: 0.861320s
+polyhedron number: 14
+optimization time: 2.985534s

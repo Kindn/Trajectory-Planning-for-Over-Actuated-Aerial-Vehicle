@@ -25,47 +25,48 @@ Warning--Require journal: lavalle1998rapidly
 Warning--Require address: gammell2014informed
 Warning--Require address: kuffner2004effective
 Warning--Require address: pan2012fcl
+Warning--Require address: rusu20113d
 Warning--Require citedate: 2017Planning
 Warning--Require address: deits2015computing
-You've used 44 entries,
+You've used 48 entries,
             3189 wiz_defined-function locations,
-            975 strings with 15307 characters,
-and the built_in function-call counts, 87553 in all, are:
-= -- 9763
-> -- 159
-< -- 362
-+ -- 7732
-- -- 565
-* -- 2306
-:= -- 9692
+            999 strings with 15882 characters,
+and the built_in function-call counts, 93772 in all, are:
+= -- 10410
+> -- 171
+< -- 390
++ -- 8187
+- -- 609
+* -- 2518
+:= -- 10309
 add.period$ -- 0
-call.type$ -- 44
-change.case$ -- 230
+call.type$ -- 48
+change.case$ -- 246
 chr.to.int$ -- 0
-cite$ -- 65
-duplicate$ -- 12579
-empty$ -- 3338
-format.name$ -- 460
-if$ -- 23382
+cite$ -- 70
+duplicate$ -- 13498
+empty$ -- 3635
+format.name$ -- 492
+if$ -- 24994
 int.to.chr$ -- 0
-int.to.str$ -- 44
+int.to.str$ -- 48
 missing$ -- 0
-newline$ -- 159
-num.names$ -- 44
-pop$ -- 1212
+newline$ -- 171
+num.names$ -- 48
+pop$ -- 1327
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 690
+skip$ -- 747
 stack$ -- 0
-substring$ -- 10650
-swap$ -- 2256
+substring$ -- 11387
+swap$ -- 2486
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 21
-while$ -- 1113
-width$ -- 46
-write$ -- 640
-(There were 21 warnings)
+warning$ -- 22
+while$ -- 1209
+width$ -- 50
+write$ -- 699
+(There were 22 warnings)

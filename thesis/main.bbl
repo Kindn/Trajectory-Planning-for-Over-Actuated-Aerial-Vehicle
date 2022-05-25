@@ -270,6 +270,12 @@
   octrees}\bibmark{\,［J］}\@. \bibjournal{Autonomous
   robots}\@，\bibyear{2013}\@，\bibvolume{34}\bibnumber{（3）\!\!}\thinspace{}\textnormal{：}\bibpages{189\textnormal{-}206}\@.
 
+\bibitem{rusu20113d}
+\bibauthor{RUSU R~B\@，COUSINS S}\@. \bibtitle{3d is here: Point cloud library
+  (pcl)}\bibmark{\,［C］} //\thinspace{}\bibbooktitle{2011 IEEE international
+  conference on robotics and
+  automation}\@，\bibaddress{［S.l.］}\@，\bibyear{2011}\thinspace{}\textnormal{：}\bibpages{1\textnormal{-}4}\@.
+
 \bibitem{mohta2018fast}
 \bibauthor{MOHTA K\@，WATTERSON M\@，MULGAONKAR Y，et~al}\@. \bibtitle{Fast,
   autonomous flight in GPS-denied and cluttered
@@ -300,5 +306,21 @@
 \bibauthor{ZHOU X\@，WEN X\@，WANG Z，et~al}\@. \bibtitle{Swarm of micro
   flying robots in the wild}\bibmark{\,［J］}\@. \bibjournal{Science
   Robotics}\@，\bibyear{2022}\@，\bibvolume{7}\bibnumber{（66）\!\!}\thinspace{}\textnormal{：}\bibpages{eabm5954}\@.
+
+\bibitem{liu1989limited}
+\bibauthor{LIU D~C}\@. \bibtitle{On the limited memory method for large scale
+  optimization}\bibmark{\,［J］}\@. \bibjournal{Mathematical Programming
+  B}\@，\bibyear{1989}\@，\bibvolume{45}\bibnumber{（3）\!\!}\thinspace{}\textnormal{：}\bibpages{503\textnormal{-}528}\@.
+
+\bibitem{lewis2013nonsmooth}
+\bibauthor{LEWIS A~S\@，OVERTON M~L}\@. \bibtitle{Nonsmooth optimization via
+  quasi-Newton methods}\bibmark{\,［J］}\@. \bibjournal{Mathematical
+  Programming}\@，\bibyear{2013}\@，\bibvolume{141}\bibnumber{（1）\!\!}\thinspace{}\textnormal{：}\bibpages{135\textnormal{-}163}\@.
+
+\bibitem{kam2015rviz}
+\bibauthor{KAM H~R\@，LEE S-H\@，PARK T，et~al}\@. \bibtitle{Rviz: a toolkit
+  for real domain data visualization}\bibmark{\,［J］}\@.
+  \bibjournal{Telecommunication
+  Systems}\@，\bibyear{2015}\@，\bibvolume{60}\bibnumber{（2）\!\!}\thinspace{}\textnormal{：}\bibpages{337\textnormal{-}345}\@.
 
 \end{thebibliography}

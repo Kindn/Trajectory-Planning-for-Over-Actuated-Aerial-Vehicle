@@ -1,0 +1,10 @@
+---------------------------
+t_rrt: 0.431476 sec
+t_sfc: 0.898479 sec
+t_opt: 4.60947 sec
+N_sfc: 20
+---------------------------
+t_collision: 1.891 ms
+t_dynamic:   0.261 ms
+t_penalty:   2.159 ms
+iter_num:    1788

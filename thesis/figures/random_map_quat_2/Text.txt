@@ -1,0 +1,6 @@
+RRT iters: 1541
+tree size: 645
+RRT time: 0.313564s
+SFC time: 0.869730s
+olyhedron number: 19
+optimization time: 11.393s

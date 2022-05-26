@@ -1,0 +1,1 @@
+Cost 0.802377 seconds

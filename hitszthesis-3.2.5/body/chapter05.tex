@@ -3,9 +3,13 @@
 \chapter{规划器测试与实验}\label{chap:experiments}
 
 \section{引言}\label{sec:intro_5}
+本章对前文所设计的过驱动飞行器的6自由度规划器进行一系列实验。
+\ref{sec:planner_performance}节对规划器的效果进行测试，
+对比分析了使用欧拉角姿态表示法和使用四元数姿态表示法（以下简称欧拉角法和四元数法）两种情况下规划器的性能特点；
+\ref{sec:simulation_experiments}节和\ref{sec:real_world_experiments}节分别令OmniHex的仿真模型和实物飞行器执行规划器给出的轨迹，
+初步验证了本课题规划器的可行性。
 
 \section{规划器效果测试}\label{sec:planner_performance}
-
 本节通过在各种给定的环境中运行本课题开发的过驱动飞行器轨迹器来测试其效果，
 并将结果使用Rviz\cite{kam2015rviz}等可视化工具进行展示。
 
@@ -100,17 +104,17 @@
 
     \centering
     \subfigure{\label{fig:dyn_prop_quat}}\addtocounter{subfigure}{-2}
-    \subfigure{\subfigure[基于欧拉角法规划的轨迹动力学特性]{\includegraphics[width=0.45\textwidth]{random_map_rpy_2/dyn.png}}}
+    \subfigure{\subfigure[基于欧拉角法规划的轨迹动力学特性]{\includegraphics[width=0.47\textwidth]{random_map_rpy_2/dyn.png}}}
     \hspace{0.2em}
     \subfigure{\label{fig:dyn_prop_3d_quat}}\addtocounter{subfigure}{-2}
-    \subfigure{\subfigure[基于欧拉角法规划的轨迹动力学特性（3D）]{\includegraphics[width=0.45\textwidth]{random_map_rpy_2/dyn_3d.png}}}
+    \subfigure{\subfigure[基于欧拉角法规划的轨迹动力学特性（3D）]{\includegraphics[width=0.47\textwidth]{random_map_rpy_2/dyn_3d.png}}}
 
     \centering
     \subfigure{\label{fig:dyn_prop_rpy}}\addtocounter{subfigure}{-2}
-    \subfigure{\subfigure[基于四元数法规划的轨迹动力学特性]{\includegraphics[width=0.45\textwidth]{random_map_quat_4/dyn.png}}}
+    \subfigure{\subfigure[基于四元数法规划的轨迹动力学特性]{\includegraphics[width=0.47\textwidth]{random_map_quat_4/dyn.png}}}
     \hspace{0.2em}
     \subfigure{\label{fig:dyn_prop_3d_rpy}}\addtocounter{subfigure}{-2}
-    \subfigure{\subfigure[基于四元数法规划的轨迹动力学特性（3D）]{\includegraphics[width=0.45\textwidth]{random_map_quat_4/dyn_3d.png}}}
+    \subfigure{\subfigure[基于四元数法规划的轨迹动力学特性（3D）]{\includegraphics[width=0.47\textwidth]{random_map_quat_4/dyn_3d.png}}}
     
     \end{minipage}
     \caption{所得轨迹的动力学特性示意图}
@@ -411,7 +415,7 @@
 \end{figure}
 
 \section{实物避障测试}\label{sec:real_world_experiments}
-
+TODO
 \section{本章小结}\label{sec:summary_5}
 本章首先从安全性和快速性两方面对所设计的规划器进行性能测试，
 对比分析了欧拉角法和四元数法两种方法的优势与短板；

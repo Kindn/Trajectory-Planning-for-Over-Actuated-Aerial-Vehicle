@@ -4,13 +4,14 @@
 \chapter{后端轨迹生成算法设计}\label{chap:back_end_trajectory_generation}
 
 \section{引言}\label{sec:intro_4}
-轨迹规划的后端部分的主要任务是根据前端生成的初始可行路径或安全飞行走廊，
+上一章设计了轨迹规划的前端算法，
+为本章所介绍的轨迹规划后端部分提供了数据输入。
+后端部分的主要任务是根据前端生成的初始可行路径或安全飞行走廊，
 通过拟合、优化的方法得到一条具备时间律的连续、平滑且安全的轨迹输入到飞行器的控制器中。
 本章介绍基于优化的后端轨迹生成算法设计，
 \ref{sec:geometrically_constrained_trajectory_optimization}节介绍几何约束下多旋翼的轨迹优化原理；
-\ref{subsec:problem_setup}小节构建了几何约束下过驱动多旋翼飞行器6自由度轨迹规划的形式；
-\ref{subsec:planning_based_on_euler_angle}小节介绍基于欧拉角姿态表示的过驱动飞行器$SE(3)$轨迹生成算法设计；
-\ref{subsec:planning_based_on_quaternion}小节介绍基于四元数姿态表示的过驱动飞行器$SE(3)$轨迹生成算法设计。
+\ref{sec:geometrically_constrained_SE3_planning_for_omnihex}节基于该原理构建了几何约束下过驱动飞行器6自由度$SE(3)$轨迹优化框架，
+并提出了该框架下使用欧拉角和使用四元数表示姿态的两种规划方式，并推导了相应公式。
 
 \section{几何约束下多旋翼的轨迹优化原理}\label{sec:geometrically_constrained_trajectory_optimization}
 几何约束下多旋翼的轨迹优化框架GCOPTER\cite{2021Geometrically}由Wang等人于2021年提出，
@@ -29,7 +30,7 @@ GCOPTER论文的主要贡献概括为以下几点：
 
 \subsection{问题形式}\label{subsec:problem_formulation}
 多旋翼无人机等微分平坦机器人的轨迹规划任务常常在其平坦输出空间中进行，
-所期望得到的结果是一条平坦输出$\bm{z}$的轨迹$\bm{z}(t):[0, T]\mapsto\mathbb{R}_m$，
+所期望得到的结果是一条平坦输出$\bm{z}$的轨迹$\bm{z}(t):[0, T]\mapsto\mathbb{R}^m$，
 对于OmniHex这样的全驱动多旋翼飞行器而言有$m=6$。
 
 GCOPTER的优化目标是在满足一定的几何约束和连续时间约束的前提下使轨迹尽量平滑且尽量满足设定的时间分配要求，
@@ -316,7 +317,7 @@ GCOPTER框架就是通过MINCO的时空变形来优化目标函数，从而得�
 \begin{subeqnarray}
   \label{equ:optimization_in_minco}
   &\min_{\bm{q}, \bm{T}} &J(\bm{q}, \bm{T}) = J_q(\bm{q}, \bm{T}) + \rho(\Vert\bm{T}\Vert_1) \slabel{equ:time_regularized_control_effort_in_minco} \\
-  &s.t. \ &\mathcal{G}(\bm{z}(t), \dot{\bm{z}}(t), \cdots, \bm{z}^{(s)}(t)\}) \preceq \textbf{0}, \forall t \in [0, T], \slabel{equ:time_continuos_constraint_minco}\\
+  &s.t. \ &\mathcal{G}(\bm{z}(t), \dot{\bm{z}}(t), \cdots, \bm{z}^{(s)}(t)) \preceq \textbf{0}, \forall t \in [0, T], \slabel{equ:time_continuos_constraint_minco}\\
   & & \bm{q}_i \in \mathcal{P}_i, i = 1, 2, \cdots, M-1, \slabel{equ:spatial_constraints_minco}\\ 
   & & \bm{T} \succ \textbf{0}, \slabel{equ:temporal_constraints_minco}\\
   & & \bm{z}^{[s-1]}(0) = \bar{\bm{z}}_o, \bm{z}^{[s-1]}(T) = \bar{\bm{z}}_f. \slabel{equ:boundary_conditions_minco}
@@ -448,7 +449,7 @@ GCOPTER框架就是通过MINCO的时空变形来优化目标函数，从而得�
 在优化过程开始之前会给定的初始$\bm{q}_i$，其对应的初始$\bm{\xi}_i$可以通过最小化$\Vert \bm{f}_{\mathcal{H}}(\bm{\xi}_i) - \bm{q}_i \Vert_2^2$的值来得到。
 
 
-若记${\partial J}/{\partial \bm{q}_i}$，则$J$关于对应的$\bm{\xi}_i$的梯度就可以写为：
+若记${\partial J}/{\partial \bm{q}_i}=\bm{g}_i$，则$J$关于对应的$\bm{\xi}_i$的梯度就可以写为：
 \begin{equation}
   \pdiff{J}{\bm{\xi}_i} = 
   \frac{8\bm{\xi}_i \circ \trans{\hat{\bm{V}}}\bm{g}_i}{(\bm{\xi}_i^{\text{T}}\bm{\xi}_i+1)^2} - 
@@ -517,7 +518,7 @@ GCOPTER中使用时间积分罚函数（time integral penalty function）法来�
 基于几何约束轨迹优化框架GCOPTER，Han等人开发出了针对欠驱动四旋翼飞行器的$SE(3)$轨迹规划器Fast-Racing\cite{2021Fast}，
 其计算效率与此前仅有的欠驱动多旋翼飞行器的$SE(3)$规划框架\cite{liu2018search}相比有压倒性的优势，
 充分证明了GCOPTER在（欠驱动多旋翼飞行器）$SE(3)$规划上的适用性。
-本课题的目标是将这种适用性拓展到OmniHex等过驱动多旋翼飞行器上
+本课题的目标是将这种适用性拓展到OmniHex等过驱动多旋翼飞行器上。
 
 与欠驱动多旋翼飞行器不同的是，过驱动多旋翼飞行器可以跟踪6自由度轨迹，即姿态轨迹也可以独立跟踪而不与位置部分耦合。
 因为这个原因，在为过驱动多旋翼飞行器设计几何约束下的轨迹优化算法时，需要为6自由度轨迹建立自己的问题形式，
@@ -615,7 +616,7 @@ GCOPTER中使用时间积分罚函数（time integral penalty function）法来�
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width = 0.62\textwidth]{using_polyhedron_to_approximate_geometry_of_drone.png}
+  \includegraphics[width = 0.62\textwidth]{approximate_polyhedron.png}
   \caption{用凸多面体近似飞行器的形状}
   \label{fig:using_polyhedron_to_approximate_geometry_of_drone}
 \end{figure}
@@ -772,24 +773,58 @@ Terzakis等人提出过利用球极投影参数化四元数的方式\cite{terzak
 $\bm{G}$以及罚函数梯度的具体形式详见附录\ref{appdx:C}。
 
 \subsection{算法实现}\label{subsec:impl_of_traj_opt_algo}
+\subsubsection{中间点分配与初始中间点确定}
+由一系列凸多面体$\{\mathcal{P}^1,\cdots,\mathcal{P}^{M_\mathcal{P}}\}$组成的飞行走廊一定满足如下条件：
+\begin{equation}
+  \begin{cases}
+    \mathcal{P}^i \cap \mathcal{P}^j = \emptyset, \quad \vert i-j \vert = 2 \\
+    \text{Int}(\mathcal{P}^i \cap \mathcal{P}^j) \neq \emptyset, \quad \vert i-j \vert \leq 1
+  \end{cases}
+  \label{equ:conditions_of_sfc}
+\end{equation}
+且起始位置点和终止位置点一定分别在凸多面体$\mathcal{P}^1$和$\mathcal{P}^{M_\mathcal{P}}$内。
+根据\equref{equ:spatial_constraints_minco}，每个位置中间点都会硬性约束在一个凸多面体中，
+通常的中间点分配策略是：在每两个相邻的凸多面体的相交区域内部$\text{Int}(\mathcal{P}^{i-1} \cap \mathcal{P}^i)$内分配一个位置中间点，
+在此将这样的位置点以及起始位置点和终止位置点统称为关键点；
+随后在相邻两个关键点之间分配若干个位置中间点到$\mathcal{P}^{i-1}$中。
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width = 0.8\textwidth]{assign_initial_q.png}
+  \caption{初始位置中间点分配示意图}
+  \label{fig:assign_initial_q}
+\end{figure}
+
+根据以上信息，在本课题的实现中初始中间点分配方法如下：
+\begin{enumerate}
+  \renewcommand{\labelenumi}{(\theenumi)}
+  \item 在相邻两个凸多面体的交集内部$\text{Int}(\mathcal{P}^{i-1} \cap \mathcal{P}^i)$中分配一个位置关键点（\figref{fig:assign_initial_q}中的红色点），
+  这个步骤通过将位置点在$\text{Int}(\mathcal{P}^{i-1} \cap \mathcal{P}^i)$中的重心坐标设为$1/(n_g+1)$来实现，
+  由凸多面体的H-表示法枚举其顶点的算法使用开源方案\footnote{https://github.com/ZJU-FAST-Lab/VertexEnumeration3D}；
+  \item 在相邻两个位置关键点之间以一定间距作线性插值得到一系列分配到$\mathcal{P}^{i-1}$中的位置中间点（\figref{fig:assign_initial_q}中的灰色点）；
+  \item 所有中间点的初始姿态分量均设为$\textbf{0}$
+\end{enumerate}
+
+\subsubsection{时间正则项与微分同胚映射选取}
 如\equref{equ:final_form_of_time_regularized_control_effort}所示， 
 本优化器不固定轨迹总时间，且时间正则项与总时间成正比，也就是说优化时会倾向于使轨迹更快地到达终点；
 此外，本课题在实现优化器时使用的时间约束消去微分同胚变换并非指数函数，而是参考GCOPTER官方实现\footnote{https://github.com/ZJU-FAST-Lab/GCOPTER}使用下述形式的微分同胚映射：
 \begin{equation}
   T_i = 
   \begin{cases}
-    1 + \tau_i(0.5\tau_i + 1), \quad if \ \tau_i > 0 \\
-    {1}/({1 + \tau_i(0.5\tau_i - 1}), \quad if \ \tau_i \leq 0
+    1 + \tau_i(0.5\tau_i + 1), \quad \tau_i > 0 \\
+    {1}/(1 + \tau_i(0.5\tau_i - 1)), \quad \tau_i \leq 0
   \end{cases}
   \label{equ:the_actual_diffeomorphism_used}
 \end{equation}
 
-
+\subsubsection{自定义约束的接口}
 为了提高优化器的复用性、充分发挥几何约束优化器灵活性的优点，对于自定义约束$\mathcal{G}$，
 在实际实现时将时间积分罚函数抽象为了SE3TimeIntPenalty类，提供evaluate()公共接口，
 此接口返回罚函数值及其关于$\bm{c}$和$\bm{T}$的梯度，
 当面对不同的任务需求时，只需继承SE3TimeIntPenalty类，用需求对应的罚函数重写evaluate()接口，并与优化器关联即可。
 
+\subsubsection{优化算法实现}
 在实现中采用L-BFGS算法\cite{liu1989limited}作为无约束优化算法，Wang有开源的算法实现\footnote{https://github.com/ZJU-FAST-Lab/LBFGS-Lite}，
 但其中仅使用Lewis等人提出的线搜索方法\cite{lewis2013nonsmooth}，该方法若在一定迭代次数后不能找到满足条件的点则视为线搜索失败，随之整个优化过程也宣告失败；
 受限于计算机对极小数字的分辨能力，在本课题这种目标函数数值特性不太好的情况下就很难优化成功。

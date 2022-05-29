@@ -2,4 +2,155 @@
 
 % 附录2
 \chapter{基于四元数姿态表示的罚函数梯度}\label{appdx:C}
+\newcommand{\den}{(\trans{\bm{\varrho}}\bm{\varrho} + 1)^3}
+\newcommand{\numone}{(3\varrho_1^2-\varrho_2^2-\varrho_3^2-1)}
+\newcommand{\nummone}{(\varrho_1^2-3\varrho_2^2-3\varrho_3^2-2)}
+\newcommand{\numtwo}{(3\varrho_2^2-\varrho_1^2-\varrho_3^2-1)}
+\newcommand{\nummtwo}{(\varrho_2^2-3\varrho_1^2-3\varrho_3^2-2)}
+\newcommand{\numthr}{(3\varrho_3^2-\varrho_1^2-\varrho_2^2-1)}
+\newcommand{\nummthr}{(\varrho_3^2-3\varrho_1^2-3\varrho_2^2-2)}
+\newcommand{\hhh}{16\varrho_1\varrho_2\varrho_3}
+\newcommand{\rk}[1]{\varrho_{#1}}
+\newcommand{\hes}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand{\hess}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
 
+首先给出$\bm{G}$的表达式： 
+\begin{align}
+    \pdiff{x}{\bm{\varrho}} &= \frac{1}{(\trans{\bm{\varrho}}\bm{\varrho} + 1)^2}
+    \trans{\begin{bmatrix}
+        2(\trans{\bm{\varrho}}\bm{\varrho} + 1)-4\varrho_1^2, & 
+        -4\varrho_1\varrho_2, & 
+        -4\varrho_1\varrho_3
+    \end{bmatrix}} \\
+    \pdiff{y}{\bm{\varrho}} &= \frac{1}{(\trans{\bm{\varrho}}\bm{\varrho} + 1)^2}
+    \trans{\begin{bmatrix}
+        -4\varrho_2\varrho_1, & 
+        2(\trans{\bm{\varrho}}\bm{\varrho} + 1)-4\varrho_2^2, & 
+        -4\varrho_2\varrho_3
+    \end{bmatrix}} \\    
+    \pdiff{z}{\bm{\varrho}} &= \frac{1}{(\trans{\bm{\varrho}}\bm{\varrho} + 1)^2}
+    \trans{\begin{bmatrix}
+        -4\varrho_3\varrho_1, & 
+        -4\varrho_3\varrho_2, & 
+        2(\trans{\bm{\varrho}}\bm{\varrho} + 1)-4\varrho_3^2
+    \end{bmatrix}} \\    
+    \pdiff{w}{\bm{\varrho}} &= \frac{4}{(\trans{\bm{\varrho}}\bm{\varrho} + 1)^2}
+    \trans{\begin{bmatrix}
+        \varrho_1, & \varrho_2, & \varrho_3
+    \end{bmatrix}}
+\end{align}
+
+下面求取$\bm{\omega}$和$\bm{R}$关于系数矩阵$\bm{c}$和时间分配向量$\bm{T}$的梯度。
+由于$\bm{\omega}$和$\bm{R}$与位置无关，故其关于$\bm{c}_i^{p}$的梯度均为零，以下不再考虑。
+令采样时刻$\hat{t}=jT_i/\kappa$则有四元数对姿态系数矩阵的梯度： 
+\begin{equation}
+    \begin{aligned}
+        \pdiff{x}{\bm{c}_i^{\sigma}}  &= \sum_{k=1}^3\pdiff{x}{\varrho_k}\pdiff{\varrho_k}{\bm{c}_i^{\sigma}}
+        &= \sum_{k=1}^3\pdiff{x}{\varrho_k}\bm{\beta}(\hat{t})\bm{e}_1^{\text{T}}
+        &= \begin{bmatrix}
+            \pdiff{x}{\varrho_1}\bm{\beta}(\hat{t}) &
+            \pdiff{x}{\varrho_2}\bm{\beta}(\hat{t}) &
+            \pdiff{x}{\varrho_3}\bm{\beta}(\hat{t})
+        \end{bmatrix}
+    \end{aligned}
+\end{equation}
+同理可求得${\partial y}/{\partial \bm{c}_i^{\sigma}}$、${\partial z}/{\partial \bm{c}_i^{\sigma}}$及${\partial w}/{\partial \bm{c}_i^{\sigma}}$。
+
+根据\equref{equ:dquat_to_omega}，我们进一步令：
+\begin{equation}
+    \bm{\Gamma} = 
+    \begin{bmatrix}
+        \bm{\gamma}_x & \bm{\gamma}_y & \bm{\gamma}_z
+    \end{bmatrix}^{\text{T}} = 
+    \bm{U}\trans{\bm{G}}
+    \label{equ:matrix_Gamma}
+\end{equation}
+则可以得到$\omega_x$关于姿态系数矩阵的导数：
+\begin{equation}
+    \begin{aligned}
+        \pdiff{\omega_x}{\bm{c}_i^{\sigma}} &= \frac{\partial}{\partial \bm{c}_i^{\sigma}}\left(2\trans{\dot{\bm{\varrho}}}\bm{\gamma}_x\right)\\
+        &= 2\frac{\partial}{\partial\bm{c}_i^{\sigma}}\left(\dot{\varrho}_1\gamma_{x1} + \dot{\varrho}_2\gamma_{x2} + \dot{\varrho}_3\gamma_{x3}\right) \\ 
+        &= 2\sum_{k=1}^3\left(\pdiff{\dot{\varrho}_k}{\bm{c}_i^{\sigma}}\gamma_{xk} + \dot{\varrho}_k\pdiff{\gamma_{xk}}{\bm{c}_i^{\sigma}}\right) \\
+        &= 2\sum_{k=1}^3\left(\bm{\beta}^{(1)}(\hat{t})\bm{e}_k^{\text{T}}\gamma_{xk} + \dot{\varrho}_k\pdiff{\gamma_{xk}}{\bm{c}_i^{\sigma}}\right)
+    \end{aligned}
+    \label{equ:omegax_d_cis}
+\end{equation}
+同理得到：
+\begin{align}
+    \pdiff{\omega_y}{\bm{c}_i^{\sigma}} &= 
+    2\sum_{k=1}^3\left(\bm{\beta}^{(1)}(\hat{t})\bm{e}_k^{\text{T}}\gamma_{yk} + \dot{\varrho}_k\pdiff{\gamma_{yk}}{\bm{c}_i^{\sigma}}\right) \label{equ:omegay_d_cis}\\
+    \pdiff{\omega_z}{\bm{c}_i^{\sigma}} &= 
+    2\sum_{k=1}^3\left(\bm{\beta}^{(1)}(\hat{t})\bm{e}_k^{\text{T}}\gamma_{zk} + \dot{\varrho}_k\pdiff{\gamma_{zk}}{\bm{c}_i^{\sigma}}\right) \label{equ:omegaz_d_cis}
+\end{align}
+其中：
+\begin{align}
+    &\begin{aligned}
+        \pdiff{\gamma_{xk}}{\bm{c}_i^{\sigma}} = &-\left(\pdiff{x}{\bm{c}_i^{\sigma}}\pdiff{w}{\varrho_k} + x\sum_{l=1}^3\frac{\partial^2 w}{\partial \varrho_k \partial \varrho_l}\pdiff{\varrho_l}{\bm{c}_i^{\sigma}}\right) 
+        + \left(\pdiff{w}{\bm{c}_i^{\sigma}}\pdiff{x}{\varrho_k} + w\sum_{l=1}^3\frac{\partial^2 x}{\partial \varrho_k \partial \varrho_l}\pdiff{\varrho_l}{\bm{c}_i^{\sigma}}\right) \\
+        &- \left(\pdiff{z}{\bm{c}_i^{\sigma}}\pdiff{y}{\varrho_k} + z\sum_{l=1}^3\frac{\partial^2 y}{\partial \varrho_k \partial \varrho_l}\pdiff{\varrho_l}{\bm{c}_i^{\sigma}}\right) 
+        + \left(\pdiff{y}{\bm{c}_i^{\sigma}}\pdiff{z}{\varrho_k} + y\sum_{l=1}^3\frac{\partial^2 z}{\partial \varrho_k \partial \varrho_l}\pdiff{\varrho_l}{\bm{c}_i^{\sigma}}\right)
+    \end{aligned} \\
+    &\begin{aligned}
+        \pdiff{\gamma_{yk}}{\bm{c}_i^{\sigma}} = &-\left(\pdiff{y}{\bm{c}_i^{\sigma}}\pdiff{w}{\varrho_k} + y\sum_{l=1}^3\frac{\partial^2 w}{\partial \varrho_k \partial \varrho_l}\pdiff{\varrho_l}{\bm{c}_i^{\sigma}}\right) 
+        + \left(\pdiff{z}{\bm{c}_i^{\sigma}}\pdiff{x}{\varrho_k} + z\sum_{l=1}^3\frac{\partial^2 x}{\partial \varrho_k \partial \varrho_l}\pdiff{\varrho_l}{\bm{c}_i^{\sigma}}\right) \\
+        &+ \left(\pdiff{w}{\bm{c}_i^{\sigma}}\pdiff{y}{\varrho_k} + w\sum_{l=1}^3\frac{\partial^2 y}{\partial \varrho_k \partial \varrho_l}\pdiff{\varrho_l}{\bm{c}_i^{\sigma}}\right) 
+        - \left(\pdiff{x}{\bm{c}_i^{\sigma}}\pdiff{z}{\varrho_k} + x\sum_{l=1}^3\frac{\partial^2 z}{\partial \varrho_k \partial \varrho_l}\pdiff{\varrho_l}{\bm{c}_i^{\sigma}}\right)
+    \end{aligned} \\
+    &\begin{aligned}
+        \pdiff{\gamma_{zk}}{\bm{c}_i^{\sigma}} = &-\left(\pdiff{z}{\bm{c}_i^{\sigma}}\pdiff{w}{\varrho_k} + z\sum_{l=1}^3\frac{\partial^2 w}{\partial \varrho_k \partial \varrho_l}\pdiff{\varrho_l}{\bm{c}_i^{\sigma}}\right) 
+        - \left(\pdiff{y}{\bm{c}_i^{\sigma}}\pdiff{x}{\varrho_k} + y\sum_{l=1}^3\frac{\partial^2 x}{\partial \varrho_k \partial \varrho_l}\pdiff{\varrho_l}{\bm{c}_i^{\sigma}}\right) \\
+        &+ \left(\pdiff{x}{\bm{c}_i^{\sigma}}\pdiff{y}{\varrho_k} + x\sum_{l=1}^3\frac{\partial^2 y}{\partial \varrho_k \partial \varrho_l}\pdiff{\varrho_l}{\bm{c}_i^{\sigma}}\right) 
+        + \left(\pdiff{w}{\bm{c}_i^{\sigma}}\pdiff{z}{\varrho_k} + w\sum_{l=1}^3\frac{\partial^2 z}{\partial \varrho_k \partial \varrho_l}\pdiff{\varrho_l}{\bm{c}_i^{\sigma}}\right)
+    \end{aligned}
+\end{align}
+计算中要用到$x, y, z, w$关于$\bm{\varrho}$的Hessian矩阵，
+其表达式如下：
+\begin{align}
+    \bm{H}_x &= \frac{4}{\den}
+    \begin{bmatrix}
+        -\rk{1}\nummone \quad & \rk{2}\numone \quad & \rk{3}\numone \\ 
+        \rk{2}\numone \quad & \rk{1}\numtwo \quad & 4\rk{1}\rk{2}\rk{3} \\
+        \rk{3}\numone \quad & 4\rk{1}\rk{2}\rk{3} & \rk{1}\numthr 
+    \end{bmatrix} \\
+    \bm{H}_y &= \frac{4}{\den}
+    \begin{bmatrix}
+        \rk{2}\numone \quad & \rk{1}\numtwo \quad & 4\rk{1}\rk{2}\rk{3} \\ 
+        \rk{1}\numtwo \quad & -\rk{2}\nummtwo \quad & \rk{3}\numtwo \\
+        4\rk{1}\rk{2}\rk{3} \quad & \rk{3}\numtwo & \rk{2}\numthr 
+    \end{bmatrix} \\ 
+    \bm{H}_z &= \frac{4}{\den} 
+    \begin{bmatrix}
+        \rk{3}\numone \quad & 4\rk{1}\rk{2}\rk{3} \quad & \rk{1}\numthr \\ 
+        4\rk{1}\rk{2}\rk{3} \quad & \rk{3}\numtwo \quad & \rk{2}\nummthr \\
+        \rk{1}\numthr \quad & \rk{2}\numthr & -\rk{3}\numthr 
+    \end{bmatrix} \\ 
+    \bm{H}_w &= -\frac{4}{\den} 
+    \begin{bmatrix}
+        3\varrho_1^2-\varrho_2^2-\varrho_3^2-1 \quad &  4\rk{1}\rk{2} \quad & 4\rk{1}\rk{3} \\
+        4\rk{1}\rk{2} \quad & 3\varrho_2^2-\varrho_1^2-\varrho_3^2-1 \quad & 4\rk{2}\rk{3} \\ 
+        4\rk{3}\rk{1} \quad & 4\rk{3}\rk{2} \quad & 3\varrho_1^3-\varrho_2^1-\varrho_2^2-1
+    \end{bmatrix}
+\end{align}
+结合上面的式子即可求得角速度关于系数矩阵的梯度。
+
+为求角速度关于时间分配向量的梯度，
+记$\bm{H}=\left[\bm{H}_w \quad \bm{H}_x \quad \bm{H}_y \quad \bm{H}_z\right] \in \mathbb{R}^{3\times 12}$，
+则$\bm{G}$关于$T_i$的梯度为： 
+\begin{equation}
+    \pdiff{\bm{G}}{T_i} = 
+    \frac{j}{\kappa}\begin{bmatrix}
+        \bm{H}_w^{\text{T}}\dot{\bm{\varrho}} & \bm{H}_x^{\text{T}}\dot{\bm{\varrho}} & \bm{H}_y^{\text{T}}\dot{\bm{\varrho}} & \bm{H}_z^{\text{T}}\dot{\bm{\varrho}}
+    \end{bmatrix} 
+\end{equation}
+于是有：
+\begin{align}
+    \pdiff{\bm{Q}}{T_i} &= \frac{j}{\kappa}\trans{\bm{G}}\bm{\varrho} \\
+    \pdiff{\dot{\bm{Q}}}{T_i} &= \trans{\left(\pdiff{\bm{G}}{T_i}\right)}\dot{\bm{\varrho}} + \frac{j}{\kappa}\trans{\bm{G}}\ddot{\bm{\varrho}}
+\end{align}
+据此$\bm{U}$关于$T_i$的梯度也得到了，
+结合\equref{equ:dquat_to_omega}，即可求得$\bm{\omega}$关于$T_i$的梯度：
+\begin{equation}
+    \pdiff{\bm{\omega}}{T_i} = \pdiff{}{T_i}(2\bm{U}\dot{\bm{Q}}) = 2\left(\pdiff{\bm{U}}{T_i}\dot{\bm{Q}} + \bm{U}\pdiff{\dot{\bm{Q}}}{T_i}\right)
+\end{equation}
+
+旋转矩阵$\bm{R}$的相关梯度则可对\equref{equ:dquat_to_omega}直接求导并结合本章结论求得。

@@ -3,3 +3,38 @@
 % 附录2
 \chapter{基于欧拉角姿态表示的罚函数梯度}\label{appdx:B}
 
+从附录\ref{appdx:A}中给出的罚函数梯度表达形式可以发现，
+不同的姿态表示法对应的罚函数梯度表达式之间的差别仅体现在角速度和旋转矩阵部分，
+因此仅需对角速度和旋转矩阵的梯度进行推导，再代入附录\ref{appdx:A}中的式子即可。
+
+根据\equref{equ:euler_angle_to_omega}，
+可以得到$\bm{\omega}$关于系数矩阵的梯度为： 
+\begin{align}
+    & \pdiff{\omega_x}{\bm{c}_i^{\sigma}} = 
+    \pdiff{\dot{\phi}}{\bm{c}_i^{\sigma}}\cos\theta - 
+    \dot{\phi}\pdiff{\theta}{\bm{c}_i^{\sigma}}\sin\theta - 
+    \pdiff{\dot{\psi}}{\bm{c}_i^{\sigma}}\cos\phi\sin\theta + 
+    \dot{\psi}\pdiff{\phi}{\bm{c}_i^{\sigma}}\sin\phi\sin\theta - 
+    \dot{\psi}\pdiff{\theta}{\bm{c}_i^{\sigma}}\cos\phi\cos\theta \label{equ:omegax_d_cis} \\
+    & \pdiff{\omega_y}{\bm{c}_i^{\sigma}} = 
+    \pdiff{\dot{\theta}}{\bm{c}_i^{\sigma}} + 
+    \pdiff{\dot{\psi}}{\bm{c}_i^{\sigma}}\sin\phi + 
+    \dot{\psi}\pdiff{\phi}{\bm{c}_i^{\sigma}}\cos\phi \label{equ:omegay_d_cis} \\
+    & \pdiff{\omega_z}{\bm{c}_i^{\sigma}} = 
+    \pdiff{\dot{\phi}}{\bm{c}_i^{\sigma}}\sin\theta + 
+    \dot{\phi}\pdiff{\theta}{\bm{c}_i^{\sigma}}\cos\theta + 
+    \pdiff{\dot{\psi}}{\bm{c}_i^{\sigma}}\cos\phi\cos\theta - 
+    \dot{\psi}\pdiff{\phi}{\bm{c}_i^{\sigma}} - 
+    \dot{\psi}\pdiff{\theta}{\bm{c}_i^{\sigma}}\cos\phi\sin\theta \label{equ:omegaz_d_cis} \\
+    & \pdiff{\omega_x}{\bm{c}_i^{p}} = 
+    \pdiff{\omega_y}{\bm{c}_i^{\sigma}} = 
+    \pdiff{\omega_z}{\bm{c}_i^{\sigma}} = \textbf{0} \label{equ:omegaxyz_d_cip}
+\end{align}
+$\bm{\omega}$关于时间分配向量的梯度以及$\bm{R}$的相关梯度可以同理得到。
+其中要求${\partial \bm{R}}/{\partial [\bm{c}_i^{\sigma}]_{mn}}$可以先求$\bm{R}$中的 
+每个元素$r_{ij},i,j\in\{1,2,3\}$关于$\bm{c}_i^{\sigma}$的梯度，然后则有：
+\begin{equation}
+    \pdiff{\bm{R}}{[\bm{c}_i^{\sigma}]_{mn}} = 
+    \left[\left[\pdiff{r_{ij}}{\bm{c}_i^{\sigma}}\right]_{mn}\right]_{i=1,j=1}^{3,3}
+\end{equation}
+

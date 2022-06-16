@@ -17,10 +17,10 @@
   %=========
   % 中文信息
   %=========
-  ctitleone={过驱动飞行器的轨迹},%本科生封面使用
-  ctitletwo={规划},%本科生封面使用
-  ctitlecover={过驱动飞行器的轨迹规划},%放在封面中使用，自由断行
-  ctitle={过驱动飞行器的轨迹规划},%放在原创性声明中使用
+  ctitleone={面向冗余驱动旋翼飞行},%本科生封面使用
+  ctitletwo={器的轨迹规划方法研究},%本科生封面使用
+  ctitlecover={面向冗余驱动旋翼飞行器的轨迹规划方法研究},%放在封面中使用，自由断行
+  ctitle={面向冗余驱动旋翼飞行器的轨迹规划方法研究},%放在原创性声明中使用
   csubtitle={一条副标题}, %一般情况没有，可以注释掉
   cxueke={工学},
   cpostgraduatetype={学术},
@@ -35,7 +35,7 @@
   % 日期自动使用当前时间，若需指定按如下方式修改：
   cdate={2022年6月},
   % 指定第二页封面的日期，即答辩日期
-  cdatesecond={2022年06月10日},
+  cdatesecond={2022年06月09日},
   cstudentid={180310211},
   cstudenttype={同等学力人员}, %非全日制教育申请学位者
   %（同等学力人员）、（工程硕士）、（工商管理硕士）、
@@ -58,22 +58,23 @@
   estudenttype={Master of Engineering},
   %
   % 关键词用“英文逗号”分割
-  ckeywords={过驱动飞行器, 轨迹规划, 避障，SE(3)规划},
+  ckeywords={冗余驱动旋翼飞行器, 轨迹规划, 避障，SE(3)规划},
   ekeywords={over-actuated aircraft, trajectory planning, obstacle avoidance, SE(3) planning},
 }
 
 % 中文摘要
 \begin{cabstract}
   进入21世纪以来，多旋翼无人机领域取得了很大的发展，成为一类成功从实验室走进人们生活的机器人系统。
-  为突破现在市场上主流的欠驱动无人机所存在的瓶颈，近年来人们又研制出了不少种类过驱动多旋翼无人机系统。
+  为突破现在市场上主流的欠驱动无人机所存在的瓶颈，近年来人们又研制出了不少种类冗余驱动多旋翼无人机系统。
   作为一种全驱动系统，这种无人机可以跟踪6自由度轨迹，有效增强了多旋翼无人机的机动性能，拓宽了其应用场景。
-  可以想到，这会让多旋翼飞行器在复杂、拥挤的环境中的自主飞行能力大幅提升，而有效的规划算法是实现这种提升的关键。
-  现有的规划方案主要是基于传统欠驱动飞行器开发的，在过驱动飞行器上鲜有先例。
+  冗余驱动旋翼飞行器会让多旋翼飞行器在复杂、拥挤的环境中的自主飞行能力大幅提升，而有效的规划算法是实现这种提升的关键。
+  现有的规划方案主要是基于传统欠驱动飞行器开发的，在冗余驱动旋翼飞行器上鲜有先例。
 
-  本文以实现过驱动多旋翼飞行器在复杂环境中的避障规划为目标，为过驱动多旋翼飞行器设计了一个基于优化的全自由度全局轨迹规划器。
+  本文以实现冗余驱动旋翼飞行器在复杂环境中的避障规划为目标，首次为冗余驱动旋翼飞行器设计了一个基于优化的全自由度全局轨迹规划器。
   该规划器根据由一系列凸多面体表示的安全约束，结合飞行器的整体形态以及动力学约束，最终规划出一条由起点到终点的无碰撞最优轨迹。
 
-  本文理论部分介绍了规划器前端路径搜索算法以及安全约束生成算法的设计和实现，并且详细讲述了后端轨迹优化算法的原理和设计。
+  本文理论部分介绍了规划器前端路径搜索算法以及安全约束生成算法的设计和实现，并且详细讲述了后端轨迹优化算法的原理和设计，
+  首次构建了几何约束下面向冗余驱动多旋翼飞行器的6自由度避障轨迹优化框架。
   其中在后端优化算法部分分别介绍了基于欧拉角和基于四元数的两种姿态规划方案，并在附录中给出了相应公式的推导。
 
   在实验部分中，本文以一种全向六旋翼飞行器机构为平台，针对不同的仿真场景进行了规划实验，以验证和对比基于上述两种姿态规划方案所设计规划器的可行性、有效性和计算效率。
@@ -92,10 +93,11 @@ As a fully actuated system, the UAV can track a 6-DoF trajectory, effectively en
 As you can imagine, this would greatly improve the autonomous flight capability of multi-rotor aircraft in complex, crowded environments, and an effective planning algorithm is the key to achieving this improvement.
 The existing planning schemes are mainly based on traditional underactuated aircraft, and there are few precedents for overactuated aircraft.
 
-In order to realize obstacle avoidance planning of over-actuated multi-rotor aircraft in complex environment, a global trajectory planner with full degree of freedom based on optimization is designed for over-actuated multi-rotor aircraft.
+In order to realize obstacle avoidance planning of over-actuated multi-rotor aircraft in complex environment, a global trajectory planner with full degree of freedom based on optimization is designed for redundant drive rotorcraft for the first time.
 According to the safety constraints represented by a series of convex polyhedra, combined with the whole-body shape and dynamics constraints of the aircraft, the planner finally plans an optimal collision free trajectory from the starting point to the end point.
 
-The theoretical part of this thesis introduces the design and implementation of the front-end path search algorithm and the security constraint generation algorithm of the planner, and describes the principle and design of the back-end trajectory optimization algorithm in detail.
+The theoretical part of this thesis introduces the design and implementation of the front-end path search algorithm and the security constraint generation algorithm of the planner, and describes the principle and design of the back-end trajectory optimization algorithm in detail，
+and a 6-dof obstacle avoidance trajectory optimization framework for redundant multi-rotor aircraft with geometric constraints is constructed for the first time.
 In the part of the back-end optimization algorithm, two attitude planning schemes based on Euler Angle and quaternion are introduced respectively, and the derivation of corresponding formulas is given in the appendix.
 
 In the experimental part, planning experiments are carried out for different simulation scenarios with an omnidirectional hexarotor aircraft mechanism as the platform to verify and compare the feasibility, effectiveness and computational efficiency of the planners designed based on the above two attitude planning schemes.

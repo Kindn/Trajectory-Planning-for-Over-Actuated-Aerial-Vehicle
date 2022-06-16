@@ -14,12 +14,11 @@
         因此轨迹生成工作在连续、高维的空间中。
 \end{enumerate}
 
-本章将为过驱动飞行器的轨迹规划器设计前端算法。
-\ref{sec:search_algorithm}节介绍$SE(3)$空间中RRT算法的设计与实现；
-\ref{sec:sfc_gen_algorithm}节介绍安全飞行走廊生成算法的设计与实现。
+本章将为冗余驱动飞行器的轨迹规划器设计前端算法。
+分别介绍$SE(3)$空间中RRT算法以及安全飞行走廊生成算法的设计与实现；
 
 \section{路径搜索算法的设计}\label{sec:search_algorithm}
-为实现OmniHex等过驱动多旋翼飞行器的路径搜索，有很多算法可供选择。
+为实现OmniHex等冗余驱动多旋翼飞行器的路径搜索，有很多算法可供选择。
 本节从算法选择、算法原理和算法实现三方面讲述路径搜索的算法设计。
 \subsection{路径搜索算法概述}\label{subsec:path_search_overview}
 目前常用的路径搜索算法种类非常多，大体上可以分为基于图搜索的和基于采样的两类。
@@ -59,7 +58,7 @@ PRM算法和RRT算法都是概率完备的\cite{kavraki1998analysis,frazzoli2002
   \caption{三种典型的路径搜索算法示意图\label{fig:three_methods_of_path_search}}
 \end{figure}
 
-本课题拟在$SE(3)$状态空间中为过驱动多旋翼飞行器搜索出一条可行路径，构型空间维度较高（6维）
+本课题拟在$SE(3)$状态空间中为冗余驱动多旋翼飞行器搜索出一条可行路径，构型空间维度较高（6维）
 且重点关注路径的安全性，并不优先考虑最优性，
 故选择RRT算法作为前端路径搜索算法。
 \subsection{$SE(3)$空间中的RRT算法}\label{subsec:rrt_in_SE3}
@@ -209,7 +208,7 @@ RRT算法的另一个关键步骤是在已有的树中寻找出距离采样点$\
 
 \subsubsection{GNAT数据结构简介}\label{subsubsec:introduction_of_gnat}
 GNAT是一种基于空间的分层超平面划分（hierarchical hyperplane partitioning）对度量空间（metric space）进行索引的数据结构。
-在介绍GNAT的核心思想之前，先给出Dirichlet域的概念：
+在介绍GNAT的核心思想之前，先给出Dirichlet域的概念\cite{Engel1986}：
 \begin{definition}[（Dirichlet域）]
   \label{def:dirichlet_domain}
   给定度量空间$M$，以及点集$P=\{\bm{x}_1,\cdots,\bm{x}_k\} \subset M$，
@@ -449,7 +448,7 @@ FCL库提供了与八叉树地图库OctoMap\cite{hornung2013octomap}的接口，
   \begin{tabular}{ccccccc}
   \toprule[1.5pt]
   环境 & 地图类型 & 地图尺寸（m） & 起点（m） & 终点(m) & 迭代次数数量级 & 平均耗时\\
-  \midrule[1pt]
+  \midrule[0.2pt]
   宽松 & 八叉树 & $60\times60\times6$ & $(29, -29, 3)$ & $(-29, 29, 3)$ & $10^2$ & 20毫秒左右\\
   宽松 & 点云 & $60\times60\times6$ & $(29, -29, 3)$ & $(-29, 29, 3)$ & $10^2$ & 数秒\\
   狭窄 & 八叉树 & $7.5\times10\times6$  & $(3, 1, 3)$ & $(3, 9, 3)$ & $10^3$ & 200毫秒以内\\
@@ -460,7 +459,7 @@ FCL库提供了与八叉树地图库OctoMap\cite{hornung2013octomap}的接口，
 
 \section{3D安全飞行走廊生成算法的设计}\label{sec:sfc_gen_algorithm}
 3D空间中的安全飞行走廊（SFC）一般用来描述无障碍物的空闲空间（free space），
-一般用一系列球或凸多面体来表示，在无人机的轨迹规划中取得了许多应用\cite{2021Fast,mohta2018fast,gao2019flying}。
+一般用一系列球或凸多面体来表示，在无人机的轨迹规划中取得了许多应用\cite{han2021fast,mohta2018fast,gao2019flying}。
 SFC通常在轨迹规划框架的前端部分根据初始路径生成，然后作为轨迹优化的约束给到后端。
 目前SFC的生成方法也有多种，如Liu等人的RILS算法\cite{2017Planning}、Deits等人的IRIS方法\cite{deits2015computing}等。
 本课题使用前者，下面对其进行简要介绍。

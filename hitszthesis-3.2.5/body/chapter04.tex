@@ -9,14 +9,14 @@
 后端部分的主要任务是根据前端生成的初始可行路径或安全飞行走廊，
 通过拟合、优化的方法得到一条具备时间律的连续、平滑且安全的轨迹输入到飞行器的控制器中。
 本章介绍基于优化的后端轨迹生成算法设计，
-\ref{sec:geometrically_constrained_trajectory_optimization}节介绍几何约束下多旋翼的轨迹优化原理；
-\ref{sec:geometrically_constrained_SE3_planning_for_omnihex}节基于该原理构建了几何约束下过驱动飞行器6自由度$SE(3)$轨迹优化框架，
-并提出了该框架下使用欧拉角和使用四元数表示姿态的两种规划方式，并推导了相应公式。
+首先介绍几何约束下多旋翼的轨迹优化原理；
+随后基于该原理构建了几何约束下冗余驱动飞行器6自由度$SE(3)$轨迹优化框架，
+提出了该框架下使用欧拉角和使用四元数表示姿态的两种规划方式，并推导了相应公式。
 
 \section{几何约束下多旋翼的轨迹优化原理}\label{sec:geometrically_constrained_trajectory_optimization}
-几何约束下多旋翼的轨迹优化框架GCOPTER\cite{2021Geometrically}由Wang等人于2021年提出，
+几何约束下多旋翼的轨迹优化框架GCOPTER\cite{wang2022geometrically}由Wang等人于2021年提出，
 该框架在对多旋翼无人机施加复杂的安全约束、苛刻的动力学约束以及自定义需求的情况下依然能保证极高的计算效率和轨迹质量，
-其优秀性能催生了许多优秀成果\cite{2021Fast, zhou2022swarm}。
+其优秀性能催生了许多优秀成果\cite{han2021fast, zhou2022swarm}。
 
 GCOPTER论文的主要贡献概括为以下几点：
 \begin{enumerate}
@@ -26,7 +26,7 @@ GCOPTER论文的主要贡献概括为以下几点：
   \item 构造时间积分罚函数软化连续时间约束；\label{itm:time_int_penalty}
   \item 利用\ref{itm:eliminate_geometric_constraints}和\ref{itm:time_int_penalty}化约束优化问题为无约束优化问题，使用拟牛顿法（quasi-Newton methods）高效求解。
 \end{enumerate}
-本课题期望将此框架扩展到过驱动飞行器的6自由度$SE(3)$轨迹规划中，下面先对框架原理进行详细介绍。
+本课题期望将此框架扩展到冗余驱动飞行器的6自由度$SE(3)$轨迹规划中，下面先对框架原理进行详细介绍。
 
 \subsection{问题形式}\label{subsec:problem_formulation}
 多旋翼无人机等微分平坦机器人的轨迹规划任务常常在其平坦输出空间中进行，
@@ -225,7 +225,7 @@ $\bm{b} \in \mathbb{R}^{2Ms \times m}$仅与中间条件有关。
 基于这些参数,利用定理\ref{thr:optimality_conditions}即可得到轨迹的系数矩阵$\bm{c}$，
 这个系数矩阵对应的就是在给定的阶数、时间分配和中间条件下具有最小控制量的轨迹,
 若$s=4$,那么得到的就是Mellinger等人提出的最小化加加加速度轨迹\cite{2011minimumsnap}.
-Wang等人将这类以中间点和时间分配为参数，使用定理\ref{thr:optimality_conditions}构建出的轨迹称作MINCO轨迹\cite{2021Geometrically}。
+Wang等人将这类以中间点和时间分配为参数，使用定理\ref{thr:optimality_conditions}构建出的轨迹称作MINCO轨迹\cite{wang2022geometrically}。
 
 记中间点为$\bm{q} = \begin{bmatrix} \bm{q}_1 & \cdots & \bm{q}_{M-1} \end{bmatrix} \in \mathbb{R}^{m \times (M-1)}$，
 $\bm{q}_i \in \mathbb{R}^m$为指定在$t_i$时刻的中间条件（$d_i-1=0$），
@@ -323,7 +323,7 @@ GCOPTER框架就是通过MINCO的时空变形来优化目标函数，从而得�
   & & \bm{z}^{[s-1]}(0) = \bar{\bm{z}}_o, \bm{z}^{[s-1]}(T) = \bar{\bm{z}}_f. \slabel{equ:boundary_conditions_minco}
 \end{subeqnarray}
 其中$J_q(\bm{q}, \bm{T}):=J_c(\bm{c}, \bm{T})$，$J_c(\bm{c}, \bm{T})$为由轨迹多项式系数和时间分配确定的控制代价，
-具有解析的表达式和梯度\cite{2021Geometrically}；$\mathcal{P}_i$为第$i$个中间点$\bm{q}_i$所被分配到的SFC凸多面体。
+具有解析的表达式和梯度\cite{2021ically}；$\mathcal{P}_i$为第$i$个中间点$\bm{q}_i$所被分配到的SFC凸多面体。
 
 几何约束\equref{equ:spatial_constraints_minco}和\equref{equ:temporal_constraints_minco}是必要的，
 但会在一定程度上影响优化速度
@@ -514,16 +514,16 @@ GCOPTER中使用时间积分罚函数（time integral penalty function）法来�
   \label{equ:final_unconstrained_optimization_problem}
 \end{equation}
 
-\section{几何约束下过驱动飞行器的$SE(3)$轨迹优化算法设计} \label{sec:geometrically_constrained_SE3_planning_for_omnihex}
-基于几何约束轨迹优化框架GCOPTER，Han等人开发出了针对欠驱动四旋翼飞行器的$SE(3)$轨迹规划器Fast-Racing\cite{2021Fast}，
+\section{几何约束下冗余驱动飞行器的$SE(3)$轨迹优化算法设计} \label{sec:geometrically_constrained_SE3_planning_for_omnihex}
+基于几何约束轨迹优化框架GCOPTER，Han等人开发出了针对欠驱动四旋翼飞行器的$SE(3)$轨迹规划器Fast-Racing\cite{han2021fast}，
 其计算效率与此前仅有的欠驱动多旋翼飞行器的$SE(3)$规划框架\cite{liu2018search}相比有压倒性的优势，
 充分证明了GCOPTER在（欠驱动多旋翼飞行器）$SE(3)$规划上的适用性。
-本课题的目标是将这种适用性拓展到OmniHex等过驱动多旋翼飞行器上。
+本课题的目标是将这种适用性拓展到OmniHex等冗余驱动多旋翼飞行器上。
 
-与欠驱动多旋翼飞行器不同的是，过驱动多旋翼飞行器可以跟踪6自由度轨迹，即姿态轨迹也可以独立跟踪而不与位置部分耦合。
-因为这个原因，在为过驱动多旋翼飞行器设计几何约束下的轨迹优化算法时，需要为6自由度轨迹建立自己的问题形式，
+与欠驱动多旋翼飞行器不同的是，冗余驱动多旋翼飞行器可以跟踪6自由度轨迹，即姿态轨迹也可以独立跟踪而不与位置部分耦合。
+因为这个原因，在为冗余驱动多旋翼飞行器设计几何约束下的轨迹优化算法时，需要为6自由度轨迹建立自己的问题形式，
 并且重新设计相应的惩罚项$I_{\Sigma}(\bm{c}, \bm{T})$。
-本节首先构建出针对过驱动多旋翼飞行器6自由度轨迹优化的问题形式，
+本节首先构建出针对冗余驱动多旋翼飞行器6自由度轨迹优化的问题形式，
 随后分别就欧拉角和四元数两种姿态表示法下的轨迹优化算法进行设计。
 
 \subsection{优化问题构建}\label{subsec:problem_setup}
@@ -578,7 +578,7 @@ GCOPTER中使用时间积分罚函数（time integral penalty function）法来�
 而与姿态相关的飞行器整体位于安全区域内的约束将完全作为$\mathcal{G}$的一部分用\ref{subsec:processing_of_continuous_time_constraints}小节所介绍的方法处理，
 不对$\bm{q}_i^{\bm{\sigma}}$作任何硬约束。
 
-于是，本课题中设计的过驱动飞行器6自由度轨迹优化问题的形式如下：
+于是，本课题中设计的冗余驱动飞行器6自由度轨迹优化问题的形式如下：
 \begin{equation}
   \min_{\bm{\xi}, \bm{q}^{\bm{\sigma}}, \bm{\tau}}
   J(\bm{c}(\bm{q}^{\bm{p}}(\bm{\xi}), \bm{q}^{\bm{\sigma}}, \bm{T}(\tau)), \bm{T}(\tau)) + 
@@ -597,7 +597,7 @@ GCOPTER中使用时间积分罚函数（time integral penalty function）法来�
   &\pdiff{J}{\bm{c}} = \pdiff{J_c}{\bm{c}} \label{equ:grad_J_by_c}\\
   &\pdiff{J}{\bm{T}} = \pdiff{J_c}{\bm{T}} + k_{\rho}\textbf{1} \label{equ:grad_J_by_T}
 \end{align}
-式中$J_c$及其梯度在GCOPTER的论文中给出了解析表达式\cite[28]{2021Geometrically}。
+式中$J_c$及其梯度在GCOPTER的论文中给出了解析表达式\cite[28]{wang2022geometrically}。
 
 \subsubsection{连续时间约束$\mathcal{G}$及时间积分罚函数的形式}\label{subsubsec:form_of_G_and_tipf}
 几何约束轨迹优化框架的一个很大的优势在于，可以通过设计不同的连续时间约束$\mathcal{G}$使之灵活且高效地适应不同的任务需求。
@@ -622,7 +622,7 @@ GCOPTER中使用时间积分罚函数（time integral penalty function）法来�
 \end{figure}
 
 由凸集的性质，飞行器整体包含在安全飞行走廊内等价于长方体的8个顶点全部在安全飞行走廊内，
-因此如\figref{fig:using_polyhedron_to_approximate_geometry_of_drone}所示，其实可以将飞行器的形状用任意合适形状的凸多面体近似\cite{2021Fast}。
+因此如\figref{fig:using_polyhedron_to_approximate_geometry_of_drone}所示，其实可以将飞行器的形状用任意合适形状的凸多面体近似\cite{han2021fast}。
 长方体8个顶点在机体坐标系$\mathscr{F}_b$下的坐标为：
 \begin{equation}
   \hat{\bm{q}}_v = \trans{
@@ -686,7 +686,7 @@ GCOPTER中使用时间积分罚函数（time integral penalty function）法来�
 可以选取各种合理的姿态参数化方法来规划姿态轨迹$\bm{\sigma}(t)$，只要使$\bm{R}$和$\bm{\omega}$等姿态相关量关于$\bm{\sigma}$二阶连续可微即可，
 不同的姿态参数化方法给轨迹优化问题\equref{equ:final_unconstrained_optimization_problem}所带来的差异将只体现在惩罚项$I_\Sigma$中。
 
-\subsection{基于欧拉角姿态表示的过驱动飞行器$SE(3)$轨迹生成}\label{subsec:planning_based_on_euler_angle}
+\subsection{基于欧拉角姿态表示的冗余驱动飞行器$SE(3)$轨迹生成}\label{subsec:planning_based_on_euler_angle}
 本小节采用ZYX欧拉角来表示姿态，即取轨迹$\bm{z}(t)$的姿态部分$\bm{\sigma}(t)$为：
 \begin{equation}
   \bm{\sigma}(t) = \bm{\varepsilon}(t) = 
@@ -698,7 +698,7 @@ GCOPTER中使用时间积分罚函数（time integral penalty function）法来�
 \begin{gather}
   \bm{R}(\bm{\sigma}) = \bm{R}(\bm{\varepsilon}) = 
   \begin{bmatrix}
-    \cos\o\psi\cos\theta & & \cos\psi\sin\theta\sin\phi - \sin\psi\cos\phi & & \cos\psi\sin\theta\cos\phi + \sin\psi\sin\phi \\
+    \cos\psi\cos\theta & & \cos\psi\sin\theta\sin\phi - \sin\psi\cos\phi & & \cos\psi\sin\theta\cos\phi + \sin\psi\sin\phi \\
     \sin\psi\cos\theta & & \sin\psi\sin\theta\sin\phi + \cos\psi\cos\phi & & \sin\psi\sin\theta\cos\phi - \cos\psi\sin\phi \\
     -\sin\theta & & \cos\theta\sin\phi & & \cos\theta\cos\phi
   \end{bmatrix} \label{equ:euler_angle_to_R}\\
@@ -723,7 +723,7 @@ GCOPTER中使用时间积分罚函数（time integral penalty function）法来�
 
 $\bm{R}$与$\bm{\omega}$关于$\bm{c}$和$\bm{T}$的梯度具有解析的表达式，详见附录\ref{appdx:B}。
 
-\subsection{基于四元数姿态表示的过驱动飞行器$SE(3)$轨迹生成}\label{subsec:planning_based_on_quaternion}
+\subsection{基于四元数姿态表示的冗余驱动飞行器$SE(3)$轨迹生成}\label{subsec:planning_based_on_quaternion}
 四元数是刚体姿态表示的一种常见形式。
 与欧拉角表示法的主要区别在于，四元数表示法不存在奇异性，同一个姿态有且仅有两个单位四元数与之对应，且这两个单位四元数互为加法逆元。
 
@@ -824,7 +824,7 @@ $\bm{G}$以及罚函数梯度的具体形式详见附录\ref{appdx:C}。
 此接口返回罚函数值及其关于$\bm{c}$和$\bm{T}$的梯度，
 当面对不同的任务需求时，只需继承SE3TimeIntPenalty类，用需求对应的罚函数重写evaluate()接口，并与优化器关联即可。
 
-\subsubsection{优化算法实现}
+\subsubsection{优化算法实现}\label{subsubsec:impl_of_opt_algo}
 在实现中采用L-BFGS算法\cite{liu1989limited}作为无约束优化算法，Wang有开源的算法实现\footnote{https://github.com/ZJU-FAST-Lab/LBFGS-Lite}，
 但其中仅使用Lewis等人提出的线搜索方法\cite{lewis2013nonsmooth}，该方法若在一定迭代次数后不能找到满足条件的点则视为线搜索失败，随之整个优化过程也宣告失败；
 受限于计算机对极小数字的分辨能力，在本课题这种目标函数数值特性不太好的情况下就很难优化成功。
@@ -836,11 +836,11 @@ $\bm{G}$以及罚函数梯度的具体形式详见附录\ref{appdx:C}。
 \section{本章小结}\label{sec:summary_4}
 本章首先详细介绍了几何约束下多旋翼飞行器轨迹优化框架的基本原理，
 给出了其基本问题形式、重要技巧等；
-随后根据过驱动飞行器的特点，结合几何约束优化的核心思想，
-确定了适用于过驱动飞行器6自由度$SE(3)$轨迹优化的问题形式，
-并给出了相关公式的推导，设计出了几何约束下过驱动飞行器轨迹优化的算法框架；
+随后根据冗余驱动飞行器的特点，结合几何约束优化的核心思想，
+确定了适用于冗余驱动飞行器6自由度$SE(3)$轨迹优化的问题形式，
+并给出了相关公式的推导，设计出了几何约束下冗余驱动飞行器轨迹优化的算法框架；
 最后给出了基于欧拉角和基于四元数的两种适用于本框架的姿态参数化方式。
 
-本章完成了过驱动飞行器轨迹规划后端部分的算法设计。
-至此，一个完整的过驱动飞行器轨迹规划框架设计完毕。
+本章完成了冗余驱动飞行器轨迹规划后端部分的算法设计。
+至此，一个完整的冗余驱动飞行器轨迹规划框架设计完毕。
 

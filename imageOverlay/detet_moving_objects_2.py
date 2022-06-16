@@ -30,7 +30,7 @@ while True:
 
     contours = cv2.findContours(diff.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[0]
     for c in contours:
-        if cv2.contourArea(c) < 4000: 
+        if cv2.contourArea(c) < 400: 
             continue
         (x, y, w, h) = cv2.boundingRect(c) 
         cv2.rectangle(frame_lwpCV, (x, y), (x+w, y+h), (0, 255, 0), 2)

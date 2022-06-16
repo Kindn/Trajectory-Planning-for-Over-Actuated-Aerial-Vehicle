@@ -727,7 +727,7 @@
 % \begin{tabular}{ccccc}
 % \toprule[1.5pt]
 % $D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
-% \midrule[1pt]
+% \midrule[0.2pt]
 %  5 & 269.8 & 0.000674 & 1.79 & 0.04089\\
 % 10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
 % 20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
@@ -746,10 +746,10 @@
 % unit of China}}{-0.5em}{3.15bp}\\ %注意后两个参数分别是中英标题间距、标题和表格的间距。
 % %\caption{\wuhao 中国省级行政单位一览}\\[1em] %注意此处是标题和表格间距，这行
 % %是单语标题
-% \toprule[1.5pt] 名称 & 简称 & 省会或首府  \\ \midrule[1pt]
+% \toprule[1.5pt] 名称 & 简称 & 省会或首府  \\ \midrule[0.2pt]
 % \endfirsthead
 % \multicolumn{3}{r}{表~\thetable（续表）}\vspace{0.5em}\\
-% \toprule[1.5pt] 名称 & 简称 & 省会或首府  \\ \midrule[1pt]
+% \toprule[1.5pt] 名称 & 简称 & 省会或首府  \\ \midrule[0.2pt]
 % \endhead
 % \bottomrule[1.5pt]
 % \endfoot
@@ -1729,7 +1729,7 @@ delim_1 "\\hspace*{\\fill}"
         \else\thepage
         \fi
       \else%
-        \ifhitsz@bsfrontpagenumberline-~\thepage~-
+        \ifhitsz@bsfrontpagenumberline~\thepage~
         \else\thepage
         \fi
       \fi
@@ -2711,21 +2711,21 @@ delim_1 "\\hspace*{\\fill}"
         \ifhitsz@infoleft
           \begin{tabular}{l@{\ \  }l}
             {\xiaoer  \hitsz@put@title{\hitsz@bachelor@cthesistitle}} &
-             \underline{\makebox[\infowidth][l]{\hspace*{1em}\xiaoer\songti\textbf{\hitsz@ctitleone}}}\\
-              &  \underline{\makebox[\infowidth][l]{\hspace*{1em}\xiaoer\songti\textbf{\hitsz@ctitletwo}}}\\
+             \underline{\makebox[\infowidth][l]{\hspace*{1em}\xiaoer\songti\hitsz@ctitleone}}\\
+              &  \underline{\makebox[\infowidth][l]{\hspace*{1em}\xiaoer\songti\hitsz@ctitletwo}}\\
               & \\
             {\hitsz@put@title{\hitsz@bachelor@cstudenttitle}}  &
-              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@cauthor}}}\\
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\hitsz@cauthor}}\\
             {\hitsz@put@title{\hitsz@bachelor@cstudentidtitle}} &
-              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@cstudentid}}}\\
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\hitsz@cstudentid}}\\
             {\hitsz@put@title{\hitsz@bachelor@caffiltitlesz}} &
-              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@caffil}}}\\
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\hitsz@caffil}}\\
             {\hitsz@put@title{\hitsz@bachelor@cmajortitle}} &
-              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@csubject}}}\\
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\hitsz@csubject}}\\
             {\hitsz@put@title{\hitsz@bachelor@csupervisortitle}} &
-              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@csupervisor}}}\\
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\hitsz@csupervisor}}\\
             {\hitsz@put@title{\hitsz@cdatetitle}} &
-              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\textbf{\hitsz@cdatesecond}}}
+              \underline{\makebox[\infowidth][l]{\hspace*{1em}\songti\hitsz@cdatesecond}}
           \end{tabular}
         \else
           \begin{tabular}{l@{\ \  }c}

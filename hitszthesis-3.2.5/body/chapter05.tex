@@ -3,19 +3,20 @@
 \chapter{规划器测试与实验}\label{chap:experiments}
 
 \section{引言}\label{sec:intro_5}
-本章对前文所设计的过驱动飞行器的6自由度规划器进行一系列实验。
-\ref{sec:planner_performance}节对规划器的效果进行测试，
+本章对前文所设计的冗余驱动飞行器的6自由度规划器进行一系列实验。
+首先对规划器的效果进行测试，
 对比分析了使用欧拉角姿态表示法和使用四元数姿态表示法（以下简称欧拉角法和四元数法）两种情况下规划器的性能特点；
-\ref{sec:simulation_experiments}节和\ref{sec:real_world_experiments}节分别令OmniHex的仿真模型和实物飞行器执行规划器给出的轨迹，
-初步验证了本课题规划器的可行性。
+为验证规划器的实际可行性，分别令OmniHex的仿真模型和实物飞行器执行规划器给出的轨迹，
+进行仿真和实物避障实验。
 
 \section{规划器效果测试}\label{sec:planner_performance}
-本节通过在各种给定的环境中运行本课题开发的过驱动飞行器轨迹器来测试其效果，
+本节通过在各种给定的环境中运行本课题开发的冗余驱动飞行器轨迹器来测试其效果，
 并将结果使用Rviz\cite{kam2015rviz}等可视化工具进行展示。
 
 测试过程中环境地图作为已知量，主要使用点云和八叉树两种表达形式，规划方式为全局规划。
 重点关注输出轨迹的避障特性以及规划过程的计算效率。
-未经特殊说明，本节实验的规划器参数设置如\tabref{tab:planner_parameter_setting}
+未经特殊说明，本节实验的规划器参数设置如\tabref{tab:planner_parameter_setting}，
+实验平台为Ubuntu 20.04 + Intel Core i7-10750H CPU。
 计算过程中物理量均取其在国际单位制下的数值大小。
 
 \begin{table}[htbp]
@@ -24,9 +25,9 @@
     \begin{tabular}{cc}
     \toprule[1.5pt]
     参数 & 取值\\
-    \midrule[1pt]
+    \midrule[0.2pt]
     长方体尺寸 & (1.0m, 1.0m, 0.35m) \\
-    RRT步长 & 0.5 \\ 
+    RRT步长 & 0.5（位置部分单位为m） \\ 
     RRT采样概率 & 0.9 \\
     初始轨迹中间点间距 & 3.0m \\
     $k_\rho$ & 100.0 \\
@@ -61,7 +62,7 @@
 本小节在使用现成随机地图生成程序生成的随机环境（如\figref{fig:random_map_overview}所示）中进行规划。
 该程序可以根据人为指定的地图范围、障碍物数量即分辨率将障碍物随机布撒到环境中，并以点云的形式输出。
 障碍物分为柱形（\figref{fig:cylinder_obstacles}）和圆圈形（\figref{fig:circle_obstacles}），
-二者的尺寸范围也可以人为设置
+二者的尺寸范围也可以人为设置。
 
 \figref{fig:random_map_planning}中分别展示了使用基于欧拉角和基于四元数两种姿态表示法在随机地图中规划出的轨迹，
 轨迹多项式的次数为7（即$s=4$），
@@ -138,7 +139,7 @@
     \begin{tabular}{ccccc}
     \toprule[1.5pt]
     姿态规划方式 & RRT耗时（秒） & 生成SFC耗时 & SFC凸多面体数 & $t_{\text{opt}}$（秒）\\
-    \midrule[1pt]
+    \midrule[0.2pt]
     四元数 & 0.206 & 0.951 & 14 & 10.799 \\
     欧拉角 & 0.431 & 0.898 & 20 & 4.609 \\
     \bottomrule[1.5pt]
@@ -161,7 +162,7 @@
     \begin{tabular}{ccccccc}
     \toprule[1.5pt]
     姿态规划方式 & $t_{\text{col}}$（毫秒） & $t_{\text{dyn}}$（毫秒）& $t_{\text{pen}}$（毫秒）& L-BFGS迭代次数 & $t_{\text{opt}}$（秒）\\
-    \midrule[1pt]
+    \midrule[0.2pt]
     四元数 & 1.564 & 0.307 & 1.877 & 30 & 10.799 \\
     欧拉角 & 1.891 & 0.261 & 2.159 & 1788 & 4.609 \\
     \bottomrule[1.5pt]
@@ -211,7 +212,7 @@
     \begin{tabular}{ccccccc}
     \toprule[1.5pt]
     姿态规划方式 &  $({{t_{\text{opt}}}}/M)$均值（秒）\\
-    \midrule[1pt]
+    \midrule[0.2pt]
     四元数 & 0.388 \\
     欧拉角 & 0.106 \\
     \bottomrule[1.5pt]
@@ -225,9 +226,32 @@
 由上述成功率实验中测出的欧拉角法与四元数法平均结果如\tabref{tab:mean_opt_time_per_segment}所示，
 可见在计算时间方面欧拉角法确实更胜一筹。
 
+\subsection{改变线搜索策略对四元数法优化速度的提升}
+在\ref{subsubsec:impl_of_opt_algo}小节中提到，
+本课题所使用的L-BFGS算法中线搜索策略为：先进行Lewis-Overton搜索，如果失败则进行Backtracking搜索。
+其中Lewis-Overton搜索需要点同时满足Armijo条件和弱Wolfe条件，
+此时如果目标函数的数值特性并不是很好，可能会使得线搜索耗时过长；
+而Backtracking搜索只需要得到一个满足Armijo条件的点即可，
+因此现将线搜索策略改为仅进行Backtracking搜索来尝试提升优化速度。
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width = 0.86\textwidth]{success_rates_backtracking.png}
+    \caption{修改线搜索策略后不同障碍物密度下的规划成功率}
+    \label{fig:success_rates_backtracking}
+\end{figure}
+
+修改线搜索策略后重复上小节中的成功率实验，
+测得四元数法的平均$t_{\text{opt}}/M$值仅为0.01秒左右，
+50m×50m对角轨迹的优化总时间仅为0.2秒左右，
+较修改前缩短了数十倍；
+而欧拉角法并无明显改变。
+
+其成功率如\figref{fig:success_rates_backtracking}所示，可见成功率并未受到明显影响。
+
 \subsection{狭窄空间中的轨迹规划}\label{subsec:planning_in_narrow_env}
 本小节测试所开发的规划器在狭窄空间中的避障性能。
-规划器需要为过驱动飞行器规划出穿越一条长约6m、宽约0.3m的狭长通道的无碰撞6自由度轨迹，
+规划器需要为冗余驱动飞行器规划出穿越一条长约6m、宽约0.3m的狭长通道的无碰撞6自由度轨迹，
 这里将长方体厚度$l_z$取为0.3m，实际场合中这应该是一个比飞行器最大厚度稍大的值。
 
 \begin{figure}[!ht]
@@ -328,7 +352,7 @@
 %     \begin{tabular}{cccccc}
 %     \toprule[1.5pt]
 %     姿态规划方式 & $t_{\text{col}}$（毫秒） & $t_{\text{dyn}}$（毫秒）& $t_{\text{pen}}$（毫秒）& L-BFGS迭代次数 & $t_{\text{opt}}$（秒）\\
-%     \midrule[1pt]
+%     \midrule[0.2pt]
 %     四元数 & 0.182 & 0.055 & 0.242 & 90 & 0.838 \\
 %     欧拉角 & 0.230 & 0.052 & 0.286 & 2244 & 0.842\\
 %     \bottomrule[1.5pt]
@@ -337,25 +361,21 @@
 
 \subsection{规划器性能总结}
 本节测试并对比了基于欧拉角法和基于四元数法的规划器的性能。
-欧拉角法的主要优势为计算速度通常较快，且规划出的轨迹较为平滑，
+欧拉角法的主要优势规划出的轨迹较为平滑，
 缺点是对障碍物不够敏感，规划出的轨迹经常发生擦碰，
 且在极端环境中有一定几率会触发严重碰撞；
 四元数法的主要优势为对障碍物敏感，
-常常会为规避碰撞而牺牲一点平滑度，
+有时会为规避碰撞而牺牲一点平滑度，
 规划出的轨迹安全性较高，
-其缺点除了平滑度稍差外，就是计算时间稍长。
-
-综上所述，二者各有优劣。
-如果追求轨迹的安全性能而不那么在意计算速度，可以选择四元数法；
-如果环境不那么极端（像\figref{fig:planning_in_complex_env}中那样），
-且飞行器对抗碰撞干扰能力较强，对微小擦碰不那么在意的情况下，可以选择欧拉角法。
+且可以通过改变线搜索策略来大幅提高优化速度。
+其缺点就是平滑度稍差。
 
 几何约束轨迹优化算法所有流程的时间复杂度均为线性复杂度$O(M)$，
 而本课题的是通过串行的方式实现的轨迹优化算法，且实现代码并不一定是最优的，
-所以考虑到还有代码优化与并行计算等手段并未使用，
+所以考虑到还有前后端模式与并行计算等方法并未使用，
 本课题所开发的规划算法在计算效率上应当还有不少提升空间。
-如此看来，相对于欧拉角法来说四元数法的潜能应该更大，
-本章后续实验均采用四元数法来为过驱动飞行器规划轨迹。
+综上所述，四元数法应当具有更大的实用潜能。
+本章后续实验均采用四元数法来为冗余驱动飞行器规划轨迹。
 
 \section{仿真避障测试}\label{sec:simulation_experiments}
 本节将基于Gazebo仿真环境与PX4飞行控制软件进行仿真避障实验，
@@ -378,7 +398,7 @@
 如\figref{fig:planning_in_narrow_passage}和\figref{fig:planning_in_complex_env}中的地图都是用这种方法从Gazebo环境中直接生成的。
 
 \subsection{仿真效果展示}
-由于本小节主要演示过驱动飞行器OmniHex在复杂环境中的避障飞行，
+由于本小节主要演示冗余驱动飞行器OmniHex在复杂环境中的避障飞行，
 且为了减轻仿真系统的负担、加快仿真流畅度，
 本课题的仿真实验采用如\figref{fig:simplified_simulation_model}所示仅保留机身中心板和倾转旋翼单元的简化版模型，
 采用PID算法进行轨迹跟踪控制。
@@ -404,9 +424,7 @@
     \end{minipage}
     \caption{穿越夹缝仿真}
     \label{fig:narrow_gap_simulation}
-  \end{figure}
-
-如\figref{fig:complex_env_simulation}所示为仿真中飞行器执行规划器规划出的6自由度轨迹安全穿越更复杂环境的过程。
+\end{figure}
 \begin{figure}[ht]
     \centering
     \includegraphics[width = 0.8\textwidth]{complex_env_simulation.jpg}
@@ -414,10 +432,58 @@
     \label{fig:complex_env_simulation}
 \end{figure}
 
+如\figref{fig:complex_env_simulation}所示为仿真中飞行器执行规划器规划出的6自由度轨迹安全穿越更复杂环境的过程。
+
 \section{实物避障测试}\label{sec:real_world_experiments}
-TODO
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{real_env.png}
+    \caption{实物避障实验环境}
+    \label{fig:real_env}
+\end{figure}
+
+本课题最后设计了一个简单的避障实验来测试OmniHex实物飞行器对规划器给出的轨迹的执行情况。
+受限于动作捕捉系统场地大小，以及实物飞行器目前不能跟踪大横滚角和俯仰角的实际情况，
+本课题只设置了几个简单障碍物（\figref{fig:real_env}中的红色框所示，分别为一个四棱柱、一摞床垫以及铁架的一边），营造了一个较为宽松的环境，
+并且选取姿态倾角较小的轨迹，进行避障实验。
+
+\begin{figure}[!ht]
+    \setlength{\subfigcapskip}{-1bp}
+    \centering
+    \begin{minipage}{\textwidth}
+  
+    \centering
+    \subfigure{\label{fig:offline_traj_1}}\addtocounter{subfigure}{-2}
+    \subfigure{\subfigure[轨迹概览（视角1）]{\includegraphics[width=0.49\textwidth]{real_exp_8/traj_1.png}}}
+    \subfigure{\label{fig:offline_traj_2}}\addtocounter{subfigure}{-2}
+    \subfigure{\subfigure[轨迹概览（视角2）]{\includegraphics[width=0.49\textwidth]{real_exp_8/traj_3.png}}}
+
+    % \subfigure{\label{fig:offline_traj_dyn_prop}}\addtocounter{subfigure}{-2}
+    % \subfigure{\subfigure[轨迹动力学特性]{\includegraphics[width=0.49\textwidth]{real_exp_8/dyn.png}}}
+    % \subfigure{\label{fig:offline_traj_dyn_prop_3d}}\addtocounter{subfigure}{-2}
+    % \subfigure{\subfigure[轨迹动力学特性（3D）]{\includegraphics[width=0.49\textwidth]{real_exp_8/dyn_3d.png}}}
+    
+    \end{minipage}
+    \caption{离线规划出的轨迹}
+    \label{fig:trajectory_from_offline_planning}
+\end{figure}
+
+本实验所用到的轨迹在笔记本电脑上进行离线规划得到，并一一定时间间隔在轨迹上取点存储为轨迹点文件，
+然后将轨迹点文件存入机载电脑，由其上的offboard控制节点读取后按实际时间发送给飞行控制器。
+离线规划出的轨迹在Rviz中可视化如\figref{fig:trajectory_from_offline_planning}所示，
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{real_exp_8/out.png}
+    \caption{实物避障实验图}
+    \label{fig:real_flight}
+\end{figure}
+
+实际飞行如\figref{fig:real_flight}所示，图中通过视频抽帧叠加实现飞行器实际轨迹的显示，
+可以看到飞行器在小姿态倾角下能够很灵活地避开空间中的障碍物。
+
 \section{本章小结}\label{sec:summary_5}
 本章首先从安全性和快速性两方面对所设计的规划器进行性能测试，
 对比分析了欧拉角法和四元数法两种方法的优势与短板；
 随后在仿真环境和真实世界中让飞行器执行所规划出的轨迹，
-初步验证了本文所提出的过驱动飞行器轨迹规划算法的可行性。
+初步验证了本文所提出的冗余驱动飞行器轨迹规划算法的可行性。
